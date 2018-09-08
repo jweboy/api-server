@@ -2,8 +2,8 @@ package router
 
 import (
 	"net/http"
-	"restful-server/handler/sd"
-	"restful-server/router/middleware"
+	"restful-api-server/handler/sd"
+	"restful-api-server/router/middleware"
 
 	"github.com/gin-gonic/gin"
 )

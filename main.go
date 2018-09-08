@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"restful-server/config"
-	"restful-server/router"
+	"restful-api-server/config"
+	"restful-api-server/router"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
