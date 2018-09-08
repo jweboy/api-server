@@ -1,0 +1,21 @@
+{"level":"INFO","timestamp":"2018-09-08 13:35:31.451","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:35:31.452","file":"restful-server/main.go:67","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-09-08 13:35:32.453","file":"restful-server/main.go:51","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-09-08 13:36:10.032","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-09-08 13:36:10.034","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-09-08 13:36:19.376","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:36:19.377","file":"restful-server/main.go:67","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-09-08 13:36:20.378","file":"restful-server/main.go:51","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-09-08 13:36:27.820","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:36:27.820","file":"restful-server/main.go:55","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:01.017","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:01.018","file":"restful-server/main.go:55","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:26.325","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:26.325","file":"restful-server/main.go:55","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:36.074","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :8080"}
+{"level":"INFO","timestamp":"2018-09-08 13:39:36.074","file":"restful-server/main.go:55","msg":"listen tcp :8080: bind: address already in use"}
+{"level":"INFO","timestamp":"2018-09-08 13:40:35.555","file":"restful-server/main.go:54","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-09-08 13:40:35.556","file":"restful-server/main.go:51","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-09-08 15:43:02.704","file":"restful-api-server/main.go:54","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-09-08 15:43:02.704","file":"restful-api-server/main.go:67","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-09-08 15:43:03.706","file":"restful-api-server/main.go:51","msg":"The router has been deployed successfully."}
