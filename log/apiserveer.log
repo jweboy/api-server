@@ -22,26 +22,4 @@
 {"level":"ERROR","timestamp":"2018-09-20 23:44:09.451","file":"model/init.go:43","msg":"Database connection failed. Database name: ","data":{"error":"Error 1045: Access denied for user ''@'localhost' (using password: NO)"}}
 {"level":"INFO","timestamp":"2018-09-20 23:44:09.469","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
 {"level":"INFO","timestamp":"2018-09-20 23:44:09.471","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"ERROR","timestamp":"2018-09-21 23:42:38.960","file":"model/init.go:43","msg":"Database connection failed. Database name: test","data":{"error":"dial tcp: address tcp///127.0.0.1: unknown port"}}
-{"level":"INFO","timestamp":"2018-09-21 23:42:38.960","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:42:38.961","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-09-21 23:42:49.044","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"INFO","timestamp":"2018-09-21 23:42:49.045","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"ERROR","timestamp":"2018-09-21 23:42:55.515","file":"model/init.go:43","msg":"Database connection failed. Database name: test","data":{"error":"dial tcp: lookup http://127.0.0.1:3006: no such host"}}
-{"level":"INFO","timestamp":"2018-09-21 23:42:55.515","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:42:55.517","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-09-21 23:43:05.131","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"INFO","timestamp":"2018-09-21 23:43:05.132","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"ERROR","timestamp":"2018-09-21 23:43:14.403","file":"model/init.go:43","msg":"Database connection failed. Database name: test","data":{"error":"dial tcp 127.0.0.1:3006: connect: connection refused"}}
-{"level":"INFO","timestamp":"2018-09-21 23:43:14.403","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:43:14.404","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-09-21 23:44:01.515","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"INFO","timestamp":"2018-09-21 23:44:01.517","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
-{"level":"INFO","timestamp":"2018-09-21 23:44:04.879","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:44:04.880","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-09-21 23:45:01.345","file":"model/init.go:46","msg":"success"}
-{"level":"INFO","timestamp":"2018-09-21 23:45:01.345","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:45:01.346","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
-{"level":"INFO","timestamp":"2018-09-21 23:45:31.021","file":"model/init.go:46","msg":"db connect successful."}
-{"level":"INFO","timestamp":"2018-09-21 23:45:31.021","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
-{"level":"INFO","timestamp":"2018-09-21 23:45:31.022","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-09-21 23:47:30.334","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
