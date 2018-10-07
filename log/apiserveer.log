@@ -45,3 +45,6 @@
 {"level":"INFO","timestamp":"2018-09-21 23:45:31.021","file":"model/init.go:46","msg":"db connect successful."}
 {"level":"INFO","timestamp":"2018-09-21 23:45:31.021","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
 {"level":"INFO","timestamp":"2018-09-21 23:45:31.022","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-07 21:51:18.338","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-07 21:51:18.340","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-07 21:51:18.342","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}

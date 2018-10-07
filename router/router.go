@@ -40,5 +40,11 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/ram", sd.RAMCheck)
 	}
 
+	// The user
+	// user := g.Group("/user")
+	// {
+	// user.POST("", user.Create)
+	// }
+
 	return g
 }
