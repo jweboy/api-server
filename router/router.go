@@ -3,6 +3,7 @@ package router
 import (
 	"net/http"
 	"restful-api-server/handler/sd"
+	"restful-api-server/handler/user"
 	"restful-api-server/router/middleware"
 
 	"github.com/gin-gonic/gin"
@@ -41,10 +42,10 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	}
 
 	// The user
-	// user := g.Group("/user")
-	// {
-	// user.POST("", user.Create)
-	// }
+	u := g.Group("/v1/user")
+	{
+		u.POST("/:username", user.Create)
+	}
 
 	return g
 }

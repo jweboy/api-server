@@ -32,31 +32,31 @@ func (err *Err) Add(message string) error {
 	return err
 }
 
-func (err *Err) Addf(format string, args, ...interface{}) error {
+func (err *Err) Addf(format string, args ...interface{}) error {
 	err.Message += "" + fmt.Sprintf(format, args...)
 	return err
 }
 
 func (err *Err) Error() string {
 	return fmt.Sprintf("Err - code: %d,message: %s, error: %s", err.Code, err.Message, err.Error)
-} 
+}
 
 func IsErrUsreNotFound(err error) bool {
 	code, _ := DecodeErr(err)
 	return code == ErrUserNotFound.Code
 }
 
-func DecodeErr(err error)(int, string) {
+func DecodeErr(err error) (int, string) {
 	if err == nil {
-		return Ok.Code, OK.Message
+		return OK.Code, OK.Message
 	}
 
 	switch typed := err.(type) {
 	case *Err:
-			return typed.Code, typed.Message
-		case *Errno:
-			return typed.Code, typed.Message
-		default:
+		return typed.Code, typed.Message
+	case *Errno:
+		return typed.Code, typed.Message
+	default:
 		return InternalServerError.Code, err.Error()
 	}
 }
