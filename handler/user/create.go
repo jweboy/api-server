@@ -2,6 +2,7 @@ package user
 
 import (
 	. "restful-api-server/handler"
+	"restful-api-server/model"
 	"restful-api-server/pkg/errno"
 	"restful-api-server/util"
 
@@ -21,4 +22,37 @@ func Create(c *gin.Context) {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
+
+	u := model.UserModel{
+		Username: r.Username,
+		Password: r.Password,
+	}
+
+	// 校验请求体
+	if err := u.Validate(); err != nil {
+		SendResponse(c, errno.ErrValidation, nil)
+		return
+	}
+
+	// 密码加密
+	if err := u.Encrypt(); err != nil {
+		SendResponse(c, errno.ErrEncrypt, nil)
+		return
+	}
+	log.Info(r.Username)
+	log.Info(r.Password)
+
+	// 插入数据
+	if err := u.Create(); err != nil {
+		log.Error("test databse:", err)
+		SendResponse(c, errno.ErrDatabase, nil)
+		return
+	}
+
+	// 返回请求
+	rsp := CreateResponse{
+		Username: r.Username,
+	}
+
+	SendResponse(c, nil, rsp)
 }
