@@ -267,3 +267,4 @@
 {"level":"INFO","timestamp":"2018-10-11 01:05:26.951","file":"user/create.go:42","msg":"jianglei"}
 {"level":"INFO","timestamp":"2018-10-11 01:05:26.952","file":"user/create.go:43","msg":"12345"}
 {"level":"ERROR","timestamp":"2018-10-11 01:05:26.953","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1292: Incorrect datetime value: '0000-00-00' for column 'deletedAt' at row 1"}}
+{"level":"INFO","timestamp":"2018-10-11 01:08:15.825","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
