@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+	"restful-api-server/pkg/auth"
 	"restful-api-server/pkg/constvar"
 
 	validator "gopkg.in/go-playground/validator.v9"
@@ -9,7 +10,7 @@ import (
 
 type UserModel struct {
 	BaseModel
-	UserName string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
+	Username string `json:"username" gorm:"column:username;not null" binding:"required" validate:"min=1,max=32"`
 	Password string `json:"password" gorm:"column:password;not null" binding:"required" validate:"min=4,max=128"`
 }
 

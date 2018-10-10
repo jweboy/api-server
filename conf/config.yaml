@@ -3,6 +3,7 @@ addr: :4000                 # 绑定端口
 name: resful-server        # API Server名字
 url: http://127.0.0.1:4000 # pingServer函数请求的API服务器的ip:port
 max_ping_count: 10         # pingServer函数try的次数
+gormlog: true
 log:
   writers: file,stdout
   logger_level: DEBUG
@@ -16,4 +17,4 @@ db:
   username: jweboy
   password: jl940630
   addr: 127.0.0.1:3306
-  name: test
+  name: db_apiserver

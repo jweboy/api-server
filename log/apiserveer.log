@@ -71,3 +71,199 @@
 {"level":"INFO","timestamp":"2018-10-09 22:35:50.331","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
 {"level":"INFO","timestamp":"2018-10-09 22:35:58.632","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
 {"level":"INFO","timestamp":"2018-10-09 22:36:01.025","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:11:15.999","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:11:16.007","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:11:16.008","file":"restful-api-server/main.go:72","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-10 23:11:17.009","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:11:29.112","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:11:29.113","file":"user/create.go:25","msg":""}
+{"level":"INFO","timestamp":"2018-10-10 23:12:15.202","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:12:15.202","file":"user/create.go:25","msg":"2"}
+{"level":"INFO","timestamp":"2018-10-10 23:12:31.950","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:12:31.950","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:12:37.046","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:12:37.046","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:14:07.683","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:14:07.683","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:15:45.814","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:15:45.814","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:15:45.815","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:15:49.999","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:15:49.999","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:15:49.999","file":"user/create.go:26","msg":""}
+{"level":"INFO","timestamp":"2018-10-10 23:15:57.250","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:15:57.250","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:15:57.250","file":"user/create.go:26","msg":""}
+{"level":"INFO","timestamp":"2018-10-10 23:16:03.360","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:16:03.360","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:16:03.360","file":"user/create.go:26","msg":""}
+{"level":"INFO","timestamp":"2018-10-10 23:17:09.947","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:17:09.947","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:17:09.947","file":"user/create.go:26","msg":"1"}
+{"level":"INFO","timestamp":"2018-10-10 23:17:15.402","file":"user/create.go:14","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:17:15.403","file":"user/create.go:25","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:17:15.403","file":"user/create.go:26","msg":"123"}
+{"level":"INFO","timestamp":"2018-10-10 23:20:47.796","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:20:47.797","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:20:47.798","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:20:51.786","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:20:51.786","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:20:51.786","file":"user/create.go:27","msg":"123"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:11.624","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:22:11.624","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:11.625","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:22:14.149","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:22:14.150","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:14.150","file":"user/create.go:27","msg":"123"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:16.933","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:22:16.933","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:16.934","file":"user/create.go:27","msg":"123asdasd"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:20.301","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:22:20.302","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:20.302","file":"user/create.go:27","msg":"123a"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:22.924","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:22:22.924","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:22:22.924","file":"user/create.go:27","msg":"123"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:23.170","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:53:23.170","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:23.170","file":"user/create.go:27","msg":"123"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:26.137","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:53:26.137","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:26.137","file":"user/create.go:27","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:29.808","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:53:29.808","file":"user/create.go:26","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:53:29.808","file":"user/create.go:27","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-10 23:55:17.502","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:55:17.503","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:55:17.503","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:55:20.934","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:55:21.020","file":"user/create.go:45","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:55:21.020","file":"user/create.go:46","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-10 23:56:06.180","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:56:06.265","file":"user/create.go:45","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-10 23:56:06.265","file":"user/create.go:46","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-10 23:57:09.412","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-10 23:57:09.412","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-10 23:57:09.417","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-10 23:57:11.532","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:57:37.454","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-10 23:59:58.444","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:03:28.577","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:03:28.577","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:03:28.580","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:03:30.706","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:03:34.109","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:05:49.891","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:05:49.892","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:05:49.892","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:05:52.798","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:05:57.536","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:06:34.148","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:06:34.149","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:06:34.151","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:06:35.663","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:06:37.171","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:06:38.817","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:07:00.830","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:07:00.831","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:07:00.832","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:07:03.039","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:07:03.124","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:07:03.124","file":"user/create.go:43","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-11 00:07:07.368","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:07:07.452","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:07:07.452","file":"user/create.go:43","msg":"12345"}
+{"level":"INFO","timestamp":"2018-10-11 00:08:43.436","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:08:43.436","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:08:43.437","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:08:45.307","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:08:45.390","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:08:45.390","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:08:45.391","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:13:19.572","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:13:19.572","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:13:19.572","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:13:21.190","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:13:21.274","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:13:21.274","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:13:21.276","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1054: Unknown column 'createdAt' in 'field list'"}}
+{"level":"INFO","timestamp":"2018-10-11 00:24:48.752","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:24:48.752","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:24:48.753","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:24:52.135","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:24:52.218","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:24:52.218","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:24:52.219","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:29:11.720","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:29:11.720","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:29:17.416","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:29:17.500","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:29:17.500","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:29:17.501","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:29:27.343","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:29:27.344","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:35:02.714","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:35:02.715","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:35:13.049","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:35:13.049","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:35:13.053","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:35:14.732","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:35:14.817","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:35:14.817","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:35:14.818","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:13.899","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:40:13.900","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:13.901","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:40:15.660","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:15.744","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:15.744","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:40:15.745","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:28.603","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:28.604","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/restful-api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:31.573","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:31.658","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:31.658","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:40:31.659","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:35.759","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:35.843","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:35.843","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:40:35.844","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:37.897","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:37.981","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:37.981","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:40:37.982","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'test.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:41.988","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 00:40:41.988","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:41.990","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 00:40:44.207","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 00:40:44.290","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 00:40:44.290","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 00:40:44.291","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1146: Table 'db_apiserver.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-11 01:02:30.247","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 01:02:30.247","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 01:02:30.247","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 01:02:33.424","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 01:02:33.508","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 01:02:33.508","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 01:02:33.509","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1054: Unknown column 'deleteAt' in 'field list'"}}
+{"level":"INFO","timestamp":"2018-10-11 01:02:57.178","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 01:02:57.179","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 01:02:57.180","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 01:02:59.859","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 01:02:59.941","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 01:02:59.941","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 01:02:59.943","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1292: Incorrect datetime value: '0000-00-00' for column 'deletedAt' at row 1"}}
+{"level":"INFO","timestamp":"2018-10-11 01:03:29.222","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 01:03:29.223","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 01:03:29.224","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 01:03:31.103","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 01:03:31.412","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 01:03:31.412","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 01:03:31.417","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1292: Incorrect datetime value: '0000-00-00' for column 'deletedAt' at row 1"}}
+{"level":"INFO","timestamp":"2018-10-11 01:05:22.472","file":"model/init.go:46","msg":"db connect successful."}
+{"level":"INFO","timestamp":"2018-10-11 01:05:22.472","file":"restful-api-server/main.go:59","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-11 01:05:22.472","file":"restful-api-server/main.go:56","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-11 01:05:26.866","file":"user/create.go:15","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-11 01:05:26.951","file":"user/create.go:42","msg":"jianglei"}
+{"level":"INFO","timestamp":"2018-10-11 01:05:26.952","file":"user/create.go:43","msg":"12345"}
+{"level":"ERROR","timestamp":"2018-10-11 01:05:26.953","file":"user/create.go:47","msg":"test databse:","data":{"error":"Error 1292: Incorrect datetime value: '0000-00-00' for column 'deletedAt' at row 1"}}
