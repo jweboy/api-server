@@ -1,0 +1,10 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The purpose of this service is to provide an application\nthat is using plain go code to define an API",
+    "title": "User API.",
+    "version": "0.0.1"
+  },
+  "host": "localhost",
+  "paths": {}
+}
