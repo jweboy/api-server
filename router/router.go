@@ -45,6 +45,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	u := g.Group("/v1/user")
 	{
 		u.POST("/:username", user.Create)
+		u.DELETE("/:id", user.Delete)
 	}
 
 	return g

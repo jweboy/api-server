@@ -39,8 +39,8 @@ func Create(c *gin.Context) {
 		SendResponse(c, errno.ErrEncrypt, nil)
 		return
 	}
-	log.Info(r.Username)
-	log.Info(r.Password)
+	// log.Info(r.Username)
+	// log.Info(r.Password)
 
 	// 插入数据
 	if err := u.Create(); err != nil {
