@@ -7,7 +7,7 @@ gormlog: true
 log:
   writers: file,stdout
   logger_level: DEBUG
-  logger_file: log/apiserveer.log
+  logger_file: log/apiserver.log
   log_format_text: false
   rollingPolicy: size
   log_rotate_date: 1
