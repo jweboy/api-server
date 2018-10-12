@@ -1,13 +1,18 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
+	"os"
 	"time"
 
 	"restful-api-server/config"
 	"restful-api-server/model"
 	"restful-api-server/router"
+
+	v "restful-api-server/pkg/version"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
@@ -16,11 +21,25 @@ import (
 )
 
 var (
-	cfg = pflag.StringP("config", "c", "", "apiserver config file path.")
+	cfg     = pflag.StringP("config", "c", "", "apiserver config file path.")
+	version = pflag.BoolP("version", "v", false, "show version info.")
 )
 
 func main() {
 	pflag.Parse()
+	// Get version
+	if *version {
+		v := v.Get()
+		marshalled, err := json.MarshalIndent(&v, "", "  ")
+
+		if err != nil {
+			fmt.Printf("%v\n", err)
+			os.Exit(1)
+		}
+
+		fmt.Println(string(marshalled))
+		return
+	}
 
 	// Init config
 	if err := config.Init(*cfg); err != nil {
@@ -55,6 +74,16 @@ func main() {
 		}
 		log.Info("The router has been deployed successfully.")
 	}()
+
+	cert := viper.GetString("tls.cert")
+	key := viper.GetString("tls.key")
+	tlsAddr := viper.GetString("tls.addr")
+	if cert != "" && key != "" {
+		go func() {
+			log.Infof("Start to listening the incoming requests on https address: %s", tlsAddr)
+			log.Info(http.ListenAndServeTLS(tlsAddr, cert, key, g).Error())
+		}()
+	}
 
 	log.Infof("Start to listening the incoming requests on http address: %s", viper.GetString("addr"))
 	log.Info(http.ListenAndServe(viper.GetString("addr"), g).Error())
