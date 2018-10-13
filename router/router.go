@@ -2,11 +2,15 @@ package router
 
 import (
 	"net/http"
+
+	_ "restful-api-server/docs"
 	"restful-api-server/handler/sd"
 	"restful-api-server/handler/user"
 	"restful-api-server/router/middleware"
 
 	"github.com/gin-gonic/gin"
+	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 // Load 加载中间件、API、公用函数
@@ -31,6 +35,9 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	g.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "The incorrect API route")
 	})
+
+	// Swagger docs
+	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// The health check handlers
 	svcd := g.Group("/sd")
