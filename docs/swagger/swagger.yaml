@@ -1,0 +1,49 @@
+basePath: /v1
+definitions:
+  user.CreateRequest:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  user.CreateResponse:
+    properties:
+      username:
+        type: string
+    type: object
+host: localhost:4000
+info:
+  contact: {}
+  description: This is restful api server with golang.
+  license:
+    name: MIT
+  termsOfService: https://github.com/jweboy/restfult-api-server
+  title: Restful API
+  version: '{{.Version}}'
+paths:
+  /user/{username}:
+    post:
+      consumes:
+      - application/json
+      description: 新增用户入库
+      parameters:
+      - description: 用户名1-32个字符,密码4-128个字符，都必填
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/user.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"ok","data":{"username":"Jack"}}'
+          schema:
+            $ref: '#/definitions/user.CreateResponse'
+            type: object
+      summary: 创建用户
+      tags:
+      - user
+swagger: "2.0"

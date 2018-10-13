@@ -25,6 +25,19 @@ var (
 	version = pflag.BoolP("version", "v", false, "show version info.")
 )
 
+// main 入口函数
+// @title Restful API
+// @description This is restful api server with golang.
+// @termsOfService https://github.com/jweboy/restfult-api-server
+
+// @contract.name jweboy
+// @contract.url https://jweboy.github.io/
+// @contract.email jweboy0630@gmail.com
+
+// @license.name MIT
+
+// @host localhost:4000
+// @BasePath /v1
 func main() {
 	pflag.Parse()
 	// Get version
