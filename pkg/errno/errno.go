@@ -38,7 +38,7 @@ func (err *Err) Addf(format string, args ...interface{}) error {
 }
 
 func (err *Err) Error() string {
-	return fmt.Sprintf("Err - code: %d,message: %s, error: %s", err.Code, err.Message, err.Error)
+	return fmt.Sprintf("Err - code: %d,message: %s, error: %s", err.Code, err.Message, err.Err)
 }
 
 func IsErrUserNotFound(err error) bool {

@@ -19,6 +19,12 @@ var (
 	cfg = pflag.StringP("config", "c", "", "apiserver config file path.")
 )
 
+// main 入口函数
+// @title Restful API
+// @description This is restful server with golang.
+// @contract.name jweboy
+// @contract.email jweboy0630@gmail.com
+// @BasePath /v1
 func main() {
 	pflag.Parse()
 
