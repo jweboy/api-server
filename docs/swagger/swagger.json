@@ -1,18 +1,21 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is restful server with golang.",
+        "description": "This is restful api server with golang.",
         "title": "Restful API",
+        "termsOfService": "https://github.com/jweboy/restfult-api-server",
         "contact": {},
-        "license": {},
+        "license": {
+            "name": "MIT"
+        },
         "version": "{{.Version}}"
     },
-    "host": "{{.Host}}",
+    "host": "localhost:4000",
     "basePath": "/v1",
     "paths": {
         "/user/{username}": {
             "post": {
-                "description": "Add a new user",
+                "description": "新增用户入库",
                 "consumes": [
                     "application/json"
                 ],
@@ -22,10 +25,10 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Add new user to the database",
+                "summary": "创建用户",
                 "parameters": [
                     {
-                        "description": "Create a new user",
+                        "description": "用户名1-32个字符,密码4-128个字符，都必填",
                         "name": "user",
                         "in": "body",
                         "required": true,
@@ -37,7 +40,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\":0,\"message\":\"OK\",\"data\":{\"username\":\"kong\"}}",
+                        "description": "{\"code\":0,\"message\":\"ok\",\"data\":{\"username\":\"Jack\"}}",
                         "schema": {
                             "type": "object",
                             "$ref": "#/definitions/user.CreateResponse"

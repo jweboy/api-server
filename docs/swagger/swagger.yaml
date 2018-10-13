@@ -12,11 +12,13 @@ definitions:
       username:
         type: string
     type: object
-host: '{{.Host}}'
+host: localhost:4000
 info:
   contact: {}
-  description: This is restful server with golang.
-  license: {}
+  description: This is restful api server with golang.
+  license:
+    name: MIT
+  termsOfService: https://github.com/jweboy/restfult-api-server
   title: Restful API
   version: '{{.Version}}'
 paths:
@@ -24,9 +26,9 @@ paths:
     post:
       consumes:
       - application/json
-      description: Add a new user
+      description: 新增用户入库
       parameters:
-      - description: Create a new user
+      - description: 用户名1-32个字符,密码4-128个字符，都必填
         in: body
         name: user
         required: true
@@ -37,11 +39,11 @@ paths:
       - application/json
       responses:
         "200":
-          description: '{"code":0,"message":"OK","data":{"username":"kong"}}'
+          description: '{"code":0,"message":"ok","data":{"username":"Jack"}}'
           schema:
             $ref: '#/definitions/user.CreateResponse'
             type: object
-      summary: Add new user to the database
+      summary: 创建用户
       tags:
       - user
 swagger: "2.0"

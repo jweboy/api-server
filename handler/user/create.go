@@ -12,14 +12,14 @@ import (
 )
 
 // Create 新建用户
-// @Summary Add new user to the database
-// @Description Add a new user
+// @Summary 创建用户
+// @Description 新增用户入库
 // @Tags user
 // @Accept  json
 // @Produce  json
-// @Param user body user.CreateRequest true "Create a new user"
-// @Success 200 {object} user.CreateResponse "{"code":0,"message":"OK","data":{"username":"kong"}}"
-// @Router /user/{username} [post]...
+// @Param user body user.CreateRequest true "用户名1-32个字符,密码4-128个字符，都必填"
+// @Success 200 {object} user.CreateResponse "{"code":0,"message":"ok","data":{"username":"Jack"}}"
+// @Router /user/{username} [post]
 func Create(c *gin.Context) {
 	log.Info("User Create function called.", lager.Data{
 		"X-Request-Id": util.GetReqID(c),
