@@ -1,9 +1,9 @@
 package user
 
 import (
-	. "restful-api-server/handler"
-	"restful-api-server/model"
-	"restful-api-server/pkg/errno"
+	. "github.com/jweboy/restful-api-server/handler"
+	"github.com/jweboy/restful-api-server/model"
+	"github.com/jweboy/restful-api-server/pkg/errno"
 
 	"github.com/gin-gonic/gin"
 )

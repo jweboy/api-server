@@ -1,11 +1,12 @@
 package user
 
 import (
-	. "restful-api-server/handler"
-	"restful-api-server/model"
-	"restful-api-server/pkg/errno"
-	"restful-api-server/util"
 	"strconv"
+
+	. "github.com/jweboy/restful-api-server/handler"
+	"github.com/jweboy/restful-api-server/model"
+	"github.com/jweboy/restful-api-server/pkg/errno"
+	"github.com/jweboy/restful-api-server/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"

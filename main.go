@@ -8,11 +8,11 @@ import (
 	"os"
 	"time"
 
-	"restful-api-server/config"
-	"restful-api-server/model"
-	"restful-api-server/router"
+	"github.com/jweboy/restful-api-server/config"
+	"github.com/jweboy/restful-api-server/model"
+	"github.com/jweboy/restful-api-server/router"
 
-	v "restful-api-server/pkg/version"
+	v "github.com/jweboy/restful-api-server/pkg/version"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
