@@ -8,11 +8,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/jweboy/restful-api-server/config"
-	"github.com/jweboy/restful-api-server/model"
-	"github.com/jweboy/restful-api-server/router"
+	"api-server/config"
+	"api-server/model"
+	"api-server/router"
 
-	v "github.com/jweboy/restful-api-server/pkg/version"
+	v "api-server/pkg/version"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
@@ -21,7 +21,7 @@ import (
 )
 
 var (
-	cfg     = pflag.StringP("config", "c", "", "apiserver config file path.")
+	cfg     = pflag.StringP("config", "c", "", "api-server config file path.")
 	version = pflag.BoolP("version", "v", false, "show version info.")
 )
 

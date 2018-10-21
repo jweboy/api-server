@@ -3,8 +3,8 @@ package model
 import (
 	"fmt"
 
-	"github.com/jweboy/restful-api-server/pkg/auth"
-	"github.com/jweboy/restful-api-server/pkg/constvar"
+	"api-server/pkg/auth"
+	"api-server/pkg/constvar"
 
 	validator "gopkg.in/go-playground/validator.v9"
 )

@@ -3,10 +3,10 @@ package router
 import (
 	"net/http"
 
-	_ "github.com/jweboy/restful-api-server/docs"
-	"github.com/jweboy/restful-api-server/handler/sd"
-	"github.com/jweboy/restful-api-server/handler/user"
-	"github.com/jweboy/restful-api-server/router/middleware"
+	_ "api-server/docs"
+	"api-server/handler/sd"
+	"api-server/handler/user"
+	"api-server/router/middleware"
 
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/gin-swagger"
