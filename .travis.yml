@@ -7,7 +7,6 @@ before_install:
   - go get -u github.com/kardianos/govendor
   - govendor init
   - govendor add +external
-  - govendor install +local
 script:
   - make
     # - export PATH=$PATH:$HOME/gopath/src/github.com/jweboy/api-server/bin/
