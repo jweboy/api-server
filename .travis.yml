@@ -5,8 +5,9 @@ go:
 install: true
 script:
 - make
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
-- docker push jweboy/apiserver:latest 
+# - make build
+# - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+# - make pull-image 
 branches:
   only:
   - deploy
