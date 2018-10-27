@@ -1,10 +1,10 @@
 package user
 
 import (
-	. "api-server/handler"
-	"api-server/model"
-	"api-server/pkg/errno"
-	"api-server/util"
+	. "github.com/jweboy/api-server/handler"
+	"github.com/jweboy/api-server/model"
+	"github.com/jweboy/api-server/pkg/errno"
+	"github.com/jweboy/api-server/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"

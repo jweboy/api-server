@@ -1,7 +1,7 @@
 mode: set
-restful-api-server/util/util.go:8.35,10.2 1 1
-restful-api-server/util/util.go:12.38,14.9 2 0
-restful-api-server/util/util.go:17.2,17.37 1 0
-restful-api-server/util/util.go:20.2,20.11 1 0
-restful-api-server/util/util.go:14.9,16.3 1 0
-restful-api-server/util/util.go:17.37,19.3 1 0
+restful-github.com/jweboy/api-server/util/util.go:8.35,10.2 1 1
+restful-github.com/jweboy/api-server/util/util.go:12.38,14.9 2 0
+restful-github.com/jweboy/api-server/util/util.go:17.2,17.37 1 0
+restful-github.com/jweboy/api-server/util/util.go:20.2,20.11 1 0
+restful-github.com/jweboy/api-server/util/util.go:14.9,16.3 1 0
+restful-github.com/jweboy/api-server/util/util.go:17.37,19.3 1 0

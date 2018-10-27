@@ -8,11 +8,11 @@ import (
 	"os"
 	"time"
 
-	"api-server/config"
-	"api-server/model"
-	"api-server/router"
+	"github.com/jweboy/api-server/config"
+	"github.com/jweboy/api-server/model"
+	"github.com/jweboy/api-server/router"
 
-	v "api-server/pkg/version"
+	v "github.com/jweboy/api-server/pkg/version"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
