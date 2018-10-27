@@ -3,10 +3,14 @@ language: go
 go:
   - "1.10.3"
 install: true
+    # - echo GOPATH=HOME/gopath/src/github.com/jweboy/api-server
+    # - export PATH=$PATH:$HOME/gopath/src/github.com/jweboy/api-server/bin/
+    # - go get -v github.com/Masterminds/glide
+    # - cd src/github.com/Masterminds/glide && go install && cd -
 services:
   docker
 script:
-  - docker build -t jweboy/api-server:latest .
+  - docker build -t jweboy/apiserver:latest .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push jweboy/apiserver:latest
 branches:

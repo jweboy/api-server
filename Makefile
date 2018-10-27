@@ -23,13 +23,11 @@ gotool:
 help:
 	@echo "make - compile the source code"
 	@echo "make clean - remove binary file and vim swp files"
-
-# build:
-# 	@echo "=============building Local API============="
-# 	sudo docker build -f ./Dockerfile -t api .
-# up:
-# 	@echo "=============starting api locally============="
-# 	sudo /usr/local/bin/docker-compose up --force-recreate
-# .PHONY: build up
+build:
+	@echo "============= docker build local image ============="
+	sudo docker build -t jweboy/api-server:latest .
+upload:
+	@echo "============= docker upload image ============="
+	sudo docker push jweboy/apiserver:latest
 
 .PHONY: clean gotool
