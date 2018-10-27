@@ -30,4 +30,4 @@ upload:
 	@echo "============= docker upload image ============="
 	sudo docker push jweboy/apiserver:latest
 
-.PHONY: clean gotool
+.PHONY: clean gotool build
