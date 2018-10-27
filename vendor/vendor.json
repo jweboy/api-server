@@ -195,6 +195,90 @@
 			"revisionTime": "2018-03-08T03:36:59Z"
 		},
 		{
+			"checksumSHA1": "0OBA0RkB1kIf6mHwbdivIBWjCnE=",
+			"path": "github.com/jweboy/api-server",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "h8SIs2Au7Iq5zBJXt+s+x0d/fWw=",
+			"path": "github.com/jweboy/api-server/config",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "SP7/LF49RcArTz0rUrim/Lb5kNw=",
+			"path": "github.com/jweboy/api-server/docs",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "KdbqwsB2wgyRaiFcU3BANGRQffk=",
+			"path": "github.com/jweboy/api-server/handler",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "9Z8VSr0s8sGUQZze5kp1FR/E3EQ=",
+			"path": "github.com/jweboy/api-server/handler/sd",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "N2k/QOVsWDm2TF2QKTRphG2JjV8=",
+			"path": "github.com/jweboy/api-server/handler/user",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "Gpiuexps9kEOYUThmiWP/XDdOlM=",
+			"path": "github.com/jweboy/api-server/model",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "PbmM0G0zZYbeYx55wKOCiHaRScM=",
+			"path": "github.com/jweboy/api-server/pkg/auth",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "BG+tTUCKMGzlZy5nkk/+19YOvu0=",
+			"path": "github.com/jweboy/api-server/pkg/constvar",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "Dk79Zi1Nfp5ir9RwqsndLOdg1bg=",
+			"path": "github.com/jweboy/api-server/pkg/errno",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "AweXEQuWJoAvgCGRf0MM6bZENd4=",
+			"path": "github.com/jweboy/api-server/pkg/version",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "slMTL4B5z8jNhjh7F9A7yiavfEQ=",
+			"path": "github.com/jweboy/api-server/router",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "MO+PjzWSFC6pJuYAeCkgcKs7L+A=",
+			"path": "github.com/jweboy/api-server/router/middleware",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
+			"checksumSHA1": "X34VJaqImgYj6wxXP5ybXtPkTRg=",
+			"path": "github.com/jweboy/api-server/util",
+			"revision": "478e741c1b386d3fb3be6b8f36e9d9389b941b00",
+			"revisionTime": "2018-10-27T09:11:29Z"
+		},
+		{
 			"checksumSHA1": "43k7wJHq6oW+9ziVxEgxTqgCS2g=",
 			"path": "github.com/lexkong/log",
 			"revision": "972f9cd951fc7e5c8797f1fb2b57b63b09ff4de9",
