@@ -2,9 +2,10 @@ sudo: required
 language: go
 go:
   - "1.10.3"
+install: true
 services:
   docker
-before_install:
+script:
   - docker build -t api-server .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push jweboy/apiserver:latest
