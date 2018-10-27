@@ -15,7 +15,7 @@ all: gotool
 	go build -v -ldflags ${ldflags} .
 clean:
 	@echo "============= clean API file ============="
-	rm -f api-server
+	rm -f api-server && rm -rf vendor
 gotool:
 	@echo "============= verdor local API ============="
 	gofmt -w .
