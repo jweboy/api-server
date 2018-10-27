@@ -2,6 +2,6 @@
 
 make docker-build-image
 
-make docker-login
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
 
 make docker-push-image 

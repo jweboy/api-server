@@ -1,4 +1,4 @@
-# restful-api-server
+# restful-api-server [![Build Status](https://travis-ci.org/jweboy/restfult-api-server.svg?branch=master)](https://travis-ci.org/jweboy/restfult-api-server)
 
 # 开发
 > go run main.go

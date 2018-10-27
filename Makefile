@@ -28,9 +28,6 @@ help:
 docker-build-image:
 	@echo "============= docker build local image ============="
 	sudo docker build -t jweboy/apiserver:latest .
-docker-login:
-	@echo "============= docker login my account ============="
-	echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
 docker-push-image:
 	@echo "============= docker push this image ============="
 	docker push jweboy/apiserver:latest
