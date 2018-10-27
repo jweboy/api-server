@@ -1,0 +1,20 @@
+sudo: required
+language: go
+go:
+  - "1.10.3"
+services:
+  docker
+before_install:
+  - docker build -t api-server .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push jweboy/apiserver:latest
+branches:
+  only:
+  - deploy
+notifications:
+  slack: 
+    rooms:
+      - jweboytm:woLS6D9oasTaWyC1Ks4zqCne
+    on_success: change
+    on_failure: always
+    on_pull_requests: false

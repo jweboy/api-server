@@ -11,23 +11,25 @@ gitTreeState = $(shell if git status|grep -q 'clean';then echo clean; else echo 
 ldflags = "-w -X ${versionDir}.gitTag=${gitTag} -X ${versionDir}.buildDate=${buildDate} -X ${versionDir}.gitCommit=${gitCommit} -X ${versionDir}.gitTreeState=${gitTreeState}"
 
 all: gotool
+	@echo "============= build local API ============="
 	go build -v -ldflags ${ldflags} .
 clean:
+	@echo "============= clean API file ============="
 	rm -f api-server
 gotool:
+	@echo "============= verdor local API ============="
 	gofmt -w .
 	go tool vet . |& grep -v verdor;true
 help:
 	@echo "make - compile the source code"
 	@echo "make clean - remove binary file and vim swp files"
 
-build:
-	@echo "=============building Local API============="
-	sudo docker build -f ./Dockerfile -t api .
-up:
-	@echo "=============starting api locally============="
-	sudo /usr/local/bin/docker-compose up --force-recreate
-
+# build:
+# 	@echo "=============building Local API============="
+# 	sudo docker build -f ./Dockerfile -t api .
+# up:
+# 	@echo "=============starting api locally============="
+# 	sudo /usr/local/bin/docker-compose up --force-recreate
 # .PHONY: build up
 
 .PHONY: clean gotool
