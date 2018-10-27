@@ -1,0 +1,48 @@
+{"level":"ERROR","timestamp":"2018-10-21 23:07:29.754","file":"model/init.go:42","msg":"Database connection failed. Database name: dev_db","data":{"error":"invalid bool value: %!t(string=True)"}}
+{"level":"INFO","timestamp":"2018-10-21 23:07:29.754","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-21 23:07:29.755","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-21 23:07:29.755","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-21 23:07:29.755","file":"api-server/main.go:114","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-21 23:07:30.757","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2018-10-21 23:07:53.773","file":"model/init.go:42","msg":"Database connection failed. Database name: dev_db","data":{"error":"invalid bool value: %!t(string=true)"}}
+{"level":"INFO","timestamp":"2018-10-21 23:07:53.773","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-21 23:07:53.773","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-21 23:07:53.773","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-21 23:07:53.775","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2018-10-21 23:18:45.945","file":"model/init.go:42","msg":"Database connection failed. Database name: dev_db","data":{"error":"dial tcp 127.0.0.1:3306: connect: connection refused"}}
+{"level":"INFO","timestamp":"2018-10-21 23:18:45.945","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-21 23:18:45.945","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-21 23:18:45.945","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-21 23:18:45.947","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-21 23:18:56.388","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"ERROR","timestamp":"2018-10-21 23:18:56.472","file":"user/create.go:56","msg":"test databse:","data":{"error":"sql: database is closed"}}
+{"level":"ERROR","timestamp":"2018-10-27 11:07:41.611","file":"model/init.go:42","msg":"Database connection failed. Database name: dev_db","data":{"error":"Error 1045: Access denied for user 'root'@'183.128.137.162' (using password: YES)"}}
+{"level":"INFO","timestamp":"2018-10-27 11:07:41.628","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-27 11:07:41.629","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-27 11:07:41.629","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-27 11:07:41.629","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"ERROR","timestamp":"2018-10-27 11:07:54.710","file":"model/init.go:42","msg":"Database connection failed. Database name: dev_db","data":{"error":"Error 1045: Access denied for user 'root'@'183.128.137.162' (using password: YES)"}}
+{"level":"INFO","timestamp":"2018-10-27 11:07:54.710","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-27 11:07:54.712","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-27 11:07:54.712","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-27 11:07:54.713","file":"api-server/main.go:114","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-27 11:07:55.714","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-27 11:08:06.567","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-27 11:08:06.569","file":"config/config.go:73","msg":"Config file changed: /home/jianglei/go/src/api-server/conf/config.yaml"}
+{"level":"INFO","timestamp":"2018-10-27 11:08:10.014","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-27 11:08:10.015","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-27 11:08:10.016","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-27 11:08:10.018","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-27 11:08:42.584","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"ERROR","timestamp":"2018-10-27 11:08:43.294","file":"user/create.go:56","msg":"test databse:","data":{"error":"Error 1146: Table 'dev_db.tb_users' doesn't exist"}}
+{"level":"INFO","timestamp":"2018-10-27 11:09:20.789","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"INFO","timestamp":"2018-10-27 11:09:25.368","file":"user/create.go:24","msg":"User Create function called.","data":{"X-Request-Id":""}}
+{"level":"ERROR","timestamp":"2018-10-27 11:09:25.798","file":"user/create.go:56","msg":"test databse:","data":{"error":"Error 1062: Duplicate entry 'jl' for key 'username'"}}
+{"level":"INFO","timestamp":"2018-10-27 13:54:17.290","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-27 13:54:17.291","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-27 13:54:17.291","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-27 13:54:17.292","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-27 14:25:28.411","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-27 14:25:28.412","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-27 14:25:28.412","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-27 14:25:28.413","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
