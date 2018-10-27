@@ -4,8 +4,10 @@ go:
 - 1.10.3
 install: true
 script:
-- chmod +x ./deploy.sh
-- ./deploy.sh
+- chmod +x ./build.sh 
+- ./build.sh
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+- docker push jweboy/apiserver:latest 
 branches:
   only:
   - deploy
