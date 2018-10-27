@@ -3,9 +3,9 @@ package user
 import (
 	"strconv"
 
-	. "github.com/jweboy/restful-api-server/handler"
-	"github.com/jweboy/restful-api-server/model"
-	"github.com/jweboy/restful-api-server/pkg/errno"
+	. "github.com/jweboy/api-server/handler"
+	"github.com/jweboy/api-server/model"
+	"github.com/jweboy/api-server/pkg/errno"
 
 	"github.com/gin-gonic/gin"
 )

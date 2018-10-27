@@ -11,14 +11,14 @@ tls:
 log:
   writers: file,stdout
   logger_level: DEBUG
-  logger_file: log/apiserver.log
+  logger_file: log/api-server.log
   log_format_text: false
   rollingPolicy: size
   log_rotate_date: 1
   log_rotate_size: 1
   log_backup_count: 7
 db:
-  username: jweboy
-  password: jl940630
-  addr: 127.0.0.1:3306
-  name: db_apiserver
+  username: jl
+  password: Jl940630.
+  addr: 118.24.155.105:3306
+  name: dev_db

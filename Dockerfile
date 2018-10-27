@@ -1,7 +1,8 @@
-FROM golang
+FROM golang:1.10.3
 
-WORKDIR $GOPATH/src/github.com/jweboy/restful-api-server
-COPY . $GOPATH/src/github.com/jweboy/restful-api-server
+WORKDIR $GOPATH/src/api-server
+ADD . $GOPATH/src/api-server
+
 RUN make
 
 ENTRYPOINT ["./restful-api-server"]

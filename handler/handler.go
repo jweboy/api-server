@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/jweboy/restful-api-server/pkg/errno"
+	"github.com/jweboy/api-server/pkg/errno"
 
 	"github.com/gin-gonic/gin"
 )

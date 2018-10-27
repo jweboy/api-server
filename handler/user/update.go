@@ -3,10 +3,10 @@ package user
 import (
 	"strconv"
 
-	. "github.com/jweboy/restful-api-server/handler"
-	"github.com/jweboy/restful-api-server/model"
-	"github.com/jweboy/restful-api-server/pkg/errno"
-	"github.com/jweboy/restful-api-server/util"
+	. "github.com/jweboy/api-server/handler"
+	"github.com/jweboy/api-server/model"
+	"github.com/jweboy/api-server/pkg/errno"
+	"github.com/jweboy/api-server/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"

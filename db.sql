@@ -1,6 +1,6 @@
--- create database `db_apiserver`;
+-- create database `db_api-server`;
 
-use `db_apiserver`;
+use `dev_db`;
 
 drop table if exists `tb_users`;
 
