@@ -6,16 +6,17 @@ install:
   - go get -u github.com/kardianos/govendor
   - govendor init
   - govendor add +external
+  - make
     # - echo GOPATH=HOME/gopath/src/github.com/jweboy/api-server
     # - export PATH=$PATH:$HOME/gopath/src/github.com/jweboy/api-server/bin/
     # - go get -v github.com/Masterminds/glide
     # - cd src/github.com/Masterminds/glide && go install && cd -
-services:
-  docker
-script:
-  - docker build -t jweboy/apiserver:latest .
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push jweboy/apiserver:latest
+# services:
+#   docker
+# script:
+#   - docker build -t jweboy/apiserver:latest .
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#   - docker push jweboy/apiserver:latest
 branches:
   only:
   - deploy
