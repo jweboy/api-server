@@ -4,10 +4,9 @@ go:
 - 1.10.3
 install: true
 script:
-- make
 - make build
-# - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
-# - make pull-image 
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+- make pull-image 
 branches:
   only:
   - deploy

@@ -31,4 +31,4 @@ pull-image:
 	@echo "============= docker upload image ============="
 	docker push jweboy/apiserver:latest
 
-.PHONY: clean gotool build
+.PHONY: clean gotool
