@@ -25,7 +25,7 @@ help:
 	@echo "make clean - remove binary file and vim swp files"
 build:
 	@echo "============= docker build local image ============="
-	sudo docker build -t jweboy/api-server:latest .
+	sudo docker build -t jweboy/apiserver:latest .
 upload:
 	@echo "============= docker upload image ============="
 	sudo docker push jweboy/apiserver:latest
