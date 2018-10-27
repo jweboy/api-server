@@ -4,8 +4,7 @@ go:
 - 1.10.3
 install: true
 script:
-- chmod +x ./build.sh 
-- ./build.sh
+- make build
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
 - docker push jweboy/apiserver:latest 
 branches:
@@ -18,11 +17,11 @@ notifications:
     on_success: change
     on_failure: always
     on_pull_requests: false
-deploy:
-  provider: releases
-  api_key:
-    secure: rJPP/y1WPoqrB6b5e1uWzqegmx4pqzsZE5IsbERxJY2noh2Z/SqnsIW4JM1Zi8CAfPUJQR4reQFsJfDTfYADIWM7yL8vHMoimkv5txZR0SxtZ2wHjw29fSO2NCUDLsTgJUuSvWXt6pPt4jOGKHvfPMrczsrnhk2VnZXGI/B4Ac7RPPwbbZ+t+TJ4S4YKDNmeXRqcBuxnZfZeh+JhSZ90CPJLobcqKaCBImSZVIbAVxJVd/PKOeE4dsQ7ZbCoXTPgXpPCaHKw7zWq1/PK4qDcZmur8zKj2/Rq59tH8LpyOsGN+DQsuDYFWh1NVHw0Wp+4+0zc48eYxOIZsGfWwf1nR2qBdedaKo41bAoD345l1aosylv1XjyxNShjGT5KtlLYa8p2HO2K+m5Yz4ghesv7nGsvRVsWKcoFS82zryohgWeCbWc+OVnTnes1FFVnZVmvvW6fNQYd0E1ImxHIIAci3LRHYExFvUypWC9DF2Cv9oR1Tanj8cbkQYJzG15frpmq2IBgbAAQruUgEIKtYSVqeVus8UnOhcI0X5OfhUzk3NWRs8dZbYw/bZhi3N4aa4u3XmW5BojRaJMjFX/7f0fk+PQhj/zMnzWnu38VjNt4Xll9Lr16QouxDXR1elKz2BInZVJlFtgOL1/ZRHsHyP+hWdzzjZWdlT9tO5W0X4g/hYE=
-  file: ''
-  on:
-    repo: jweboy/restfult-api-server
-    branch: deploy
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: rJPP/y1WPoqrB6b5e1uWzqegmx4pqzsZE5IsbERxJY2noh2Z/SqnsIW4JM1Zi8CAfPUJQR4reQFsJfDTfYADIWM7yL8vHMoimkv5txZR0SxtZ2wHjw29fSO2NCUDLsTgJUuSvWXt6pPt4jOGKHvfPMrczsrnhk2VnZXGI/B4Ac7RPPwbbZ+t+TJ4S4YKDNmeXRqcBuxnZfZeh+JhSZ90CPJLobcqKaCBImSZVIbAVxJVd/PKOeE4dsQ7ZbCoXTPgXpPCaHKw7zWq1/PK4qDcZmur8zKj2/Rq59tH8LpyOsGN+DQsuDYFWh1NVHw0Wp+4+0zc48eYxOIZsGfWwf1nR2qBdedaKo41bAoD345l1aosylv1XjyxNShjGT5KtlLYa8p2HO2K+m5Yz4ghesv7nGsvRVsWKcoFS82zryohgWeCbWc+OVnTnes1FFVnZVmvvW6fNQYd0E1ImxHIIAci3LRHYExFvUypWC9DF2Cv9oR1Tanj8cbkQYJzG15frpmq2IBgbAAQruUgEIKtYSVqeVus8UnOhcI0X5OfhUzk3NWRs8dZbYw/bZhi3N4aa4u3XmW5BojRaJMjFX/7f0fk+PQhj/zMnzWnu38VjNt4Xll9Lr16QouxDXR1elKz2BInZVJlFtgOL1/ZRHsHyP+hWdzzjZWdlT9tO5W0X4g/hYE=
+#   file: ''
+#   on:
+#     repo: jweboy/restfult-api-server
+#     branch: deploy
