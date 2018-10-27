@@ -7,6 +7,7 @@ script:
   - ./deploy.sh
 branches:
   only:
+  - deploy
   - master
 notifications:
   slack:
