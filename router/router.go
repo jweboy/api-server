@@ -5,7 +5,9 @@ import (
 
 	_ "github.com/jweboy/api-server/docs"
 	"github.com/jweboy/api-server/handler/sd"
-	"github.com/jweboy/api-server/handler/user"
+
+	"github.com/jweboy/api-server/handler/qiniu"
+	// "github.com/jweboy/api-server/handler/user"
 	"github.com/jweboy/api-server/router/middleware"
 
 	"github.com/gin-gonic/gin"
@@ -49,12 +51,19 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	}
 
 	// The user
-	u := g.Group("/v1/user")
+	// u := g.Group("/v1/user")
+	// {
+	// 	u.POST("/:username", user.Create)
+	// 	u.GET("/:username", user.GET)
+	// 	u.DELETE("/:id", user.Delete)
+	// 	u.PUT("/:id", user.Update)
+	// }
+
+	// The
+	q := g.Group("/v1/qiniu")
 	{
-		u.POST("/:username", user.Create)
-		u.GET("/:username", user.GET)
-		u.DELETE("/:id", user.Delete)
-		u.PUT("/:id", user.Update)
+		q.POST("/file/:name", qiniu.Upload)
+		q.GET("/bucket", qiniu.ListBucket)
 	}
 
 	return g

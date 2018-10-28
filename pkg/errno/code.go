@@ -15,4 +15,9 @@ var (
 	ErrUserNotFound      = &Errno{Code: 20102, Message: "The user was not found."}
 	ErrTokenInvalid      = &Errno{Code: 20103, Message: "The token was invalid."}
 	ErrPasswordIncorrect = &Errno{Code: 20104, Message: "The password was incorrect."}
+
+	// Bucket errors
+	ErrListBucketError = &Errno{Code: 20130, Message: "List Bucket error."}
+	// File errors
+	ErrFileUpload = &Errno{Code: 20150, Message: "File upload error"}
 )

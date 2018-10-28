@@ -22,3 +22,6 @@ db:
   password: Jl940630.
   addr: 118.24.155.105:3306
   name: dev_db
+qiniu:
+  accessKey: 'KgNS98Sj66CuXFi64xNHs11vfrO8iXmX8Zcht-Id'
+  secretKey: 'gohLJusvDqZcwwYaL_DcF-KeTDX65zDdEzaEyayP'
