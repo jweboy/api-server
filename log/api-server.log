@@ -386,3 +386,34 @@
 {"level":"INFO","timestamp":"2018-10-28 15:31:01.531","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
 {"level":"INFO","timestamp":"2018-10-28 15:31:01.532","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
 {"level":"INFO","timestamp":"2018-10-28 15:31:01.534","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:13:11.533","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:13:11.533","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:13:11.533","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:13:11.534","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:16:05.048","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:16:05.049","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:16:05.050","file":"api-server/main.go:114","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-28 16:16:05.050","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:16:06.052","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:20:46.859","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:20:46.861","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:20:46.861","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:20:46.862","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:21:30.165","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:21:30.166","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:21:30.166","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:21:30.167","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:23:50.726","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:23:50.727","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:23:50.727","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:23:50.728","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:27:40.694","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:27:40.694","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:27:40.695","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:27:40.695","file":"api-server/main.go:114","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-28 16:27:41.700","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2018-10-28 16:29:18.584","file":"model/init.go:45","msg":"Database connection successful."}
+{"level":"INFO","timestamp":"2018-10-28 16:29:18.584","file":"api-server/main.go:101","msg":"Start to listening the incoming requests on http address: :4000"}
+{"level":"INFO","timestamp":"2018-10-28 16:29:18.585","file":"api-server/main.go:114","msg":"Waiting for the router, retry in 1 second."}
+{"level":"INFO","timestamp":"2018-10-28 16:29:18.585","file":"api-server/main.go:96","msg":"Start to listening the incoming requests on https address: :4001"}
+{"level":"INFO","timestamp":"2018-10-28 16:29:19.585","file":"api-server/main.go:88","msg":"The router has been deployed successfully."}
