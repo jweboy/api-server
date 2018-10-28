@@ -8,7 +8,7 @@ script:
 branches:
   only:
   - deploy
-  - master
+  # - master
 notifications:
   slack:
     rooms:
