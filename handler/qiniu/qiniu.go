@@ -21,9 +21,8 @@ func getKeys() Key {
 }
 
 func getToken(bucket string) string {
-	var key Key
 	// get mac
-	mac := qbox.NewMac(key.access, key.secret)
+	mac := qbox.NewMac(getKeys().access, getKeys().secret)
 	// get policy
 	putPolicy := storage.PutPolicy{
 		Scope: bucket,
