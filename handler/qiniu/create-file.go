@@ -13,7 +13,16 @@ import (
 )
 
 // UploadFile 文件上传
+// @Summary 文件上传
+// @Description 支持任何格式的文件上传，文件大小有限定
+// @Tags qiniu
+// @Accept  json
+// @Produce  json
+// @Param   bucketName     path    string     true        "存储空间名称"
+// @Router /qiniu/file/{bucketName} [post]
 func UploadFile(c *gin.Context) {
+	// TODO: 文件代销需要作限制
+
 	// 检查对应的存储空间名是否上传
 	bucketName := c.Param("bucketName")
 	if bucketName == "" {

@@ -1,5 +1,14 @@
 basePath: /v1
 definitions:
+  handler.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
   user.CreateRequest:
     properties:
       password:
@@ -22,6 +31,38 @@ info:
   title: Restful API
   version: '{{.Version}}'
 paths:
+  /qiniu/bucket:
+    get:
+      consumes:
+      - application/json
+      description: 获取所有的存储空间列表，无分页。
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"ok", "data": []}'
+          schema:
+            $ref: '#/definitions/handler.Response'
+            type: object
+      summary: 获取存储空间列表
+      tags:
+      - qiniu
+  /qiniu/file/{bucketName}:
+    post:
+      consumes:
+      - application/json
+      description: 支持任何格式的文件上传，文件大小有限定
+      parameters:
+      - description: 存储空间名称
+        in: path
+        name: bucketName
+        required: true
+        type: string
+      produces:
+      - application/json
+      summary: 文件上传
+      tags:
+      - qiniu
   /user/{username}:
     post:
       consumes:
