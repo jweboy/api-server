@@ -4,7 +4,7 @@ services:
 language: go
 go:
   - 1.10.3
-install: true
+# install: true
     
 before_install:
 - openssl aes-256-cbc -K $encrypted_67f4f4e45ba3_key -iv $encrypted_67f4f4e45ba3_iv
@@ -12,8 +12,7 @@ before_install:
 
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh root@118.24.155.105 -o StrictHostKeyChecking=no
-- docker pull jweboy/apiserver
+- ssh root@118.24.155.105 -o StrictHostKeyChecking=no 'docker pull jweboy/apiserver && exit'
 
 # script:
   # - "./deploy.sh"
