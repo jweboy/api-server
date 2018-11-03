@@ -31,5 +31,7 @@ docker-build-image:
 docker-push-image:
 	@echo "============= docker push this image ============="
 	docker push jweboy/apiserver:latest
-
+docker-run-container:
+	@echo "============= docker run it in container ============="
+	docker run -p 4000:4000 -d --name apiserver --restart=always jweboy/apiserver
 .PHONY: clean gotool

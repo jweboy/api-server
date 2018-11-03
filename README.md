@@ -6,7 +6,7 @@
 ## 后期开发命令行保存
 > sudo /usr/local/bin/docker-compose up
 > sudo docker build -t jweboy/api-server:latest .
-> sudo docker run -p 4000:4000 -d --name api-server --restart=always api-server
+> sudo docker run -p 4000:4000 -d --name api-server --restart=always jweboy/apiserver
 > sudo docker run --link mysql:mysql -p 4000:4000 api-server
 > govendor add +local
 > govendor add +external
