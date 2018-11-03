@@ -23,5 +23,4 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh root@118.24.155.105 -o StrictHostKeyChecking=no
-- 'echo "test ok."'
+- ssh root@118.24.155.105 -o StrictHostKeyChecking=no 'docker images'
