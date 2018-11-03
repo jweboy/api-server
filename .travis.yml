@@ -12,10 +12,11 @@ before_install:
 
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh root@118.24.155.105 -o StrictHostKeyChecking=no 'docker pull jweboy/apiserver'
+- ssh root@118.24.155.105 -o StrictHostKeyChecking=no
+- docker pull jweboy/apiserver
 
-script:
-  - "./deploy.sh"
+# script:
+  # - "./deploy.sh"
 
 branches:
   only:
