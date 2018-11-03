@@ -1,10 +1,7 @@
-FROM golang:1.10.3
-
-WORKDIR $GOPATH/src/api-server
-ADD . $GOPATH/src/api-server
-
+FROM golang
+WORKDIR $GOPATH/src/github.com/jweboy/api-server
+ADD . $GOPATH/src/github.com/jweboy/api-server
 RUN make
 
-ENTRYPOINT ["./restful-api-server"]
-
 EXPOSE 4000
+ENTRYPOINT ["./api-server"]
