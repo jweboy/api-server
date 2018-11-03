@@ -28,3 +28,14 @@ create table `tb_users`(
 lock tables `tb_users` write;
 insert into `tb_users` values(0, 'admin', '$2a$10$veGcArz47VGj7l9xN7g2iuT9TF21jLI1YGXarGzvARNdnt4inC9PG','2018-05-27 16:25:33','2018-05-27 16:25:33',NULL);
 unlock tables;
+
+use dev_db;
+
+drop table `tb_files`;
+
+create table if not exists `tb_files`(
+	`id` bigint(20) unsigned not null primary key auto_increment,
+    `name` varchar(255) not null,
+    `key` varchar(255) not null,
+    `createdAt` timestamp null default null
+)

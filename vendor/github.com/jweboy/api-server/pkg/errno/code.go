@@ -20,4 +20,5 @@ var (
 	ErrListBucketError = &Errno{Code: 20130, Message: "List Bucket error."}
 	// File errors
 	ErrFileUpload = &Errno{Code: 20150, Message: "File upload error"}
+	ErrFileDelete = &Errno{Code: 20151, Message: "File delete error"}
 )

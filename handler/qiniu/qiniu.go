@@ -6,23 +6,16 @@ import (
 	"github.com/spf13/viper"
 )
 
-// Key 七牛云上传的相关秘钥
-type Key struct {
-	access string
-	secret string
-}
-
-func getKeys() Key {
-	keys := Key{}
-	keys.access = viper.GetString("qiniu.accessKey")
-	keys.secret = viper.GetString("qiniu.secretKey")
-
-	return keys
+func getKeys() (string, string) {
+	accessKey := viper.GetString("qiniu.accessKey")
+	secretKey := viper.GetString("qiniu.secretKey")
+	return accessKey, secretKey
 }
 
 func getToken(bucket string) string {
+	accessKey, secretKey := getKeys()
 	// get mac
-	mac := qbox.NewMac(getKeys().access, getKeys().secret)
+	mac := qbox.NewMac(accessKey, secretKey)
 	// get policy
 	putPolicy := storage.PutPolicy{
 		Scope: bucket,

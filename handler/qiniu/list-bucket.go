@@ -18,8 +18,7 @@ import (
 // @Success 200 {object} handler.Response "{"code":0,"message":"ok", "data": []}"
 func ListBucket(c *gin.Context) {
 	// get keys
-	accessKey := getKeys().access
-	secretKey := getKeys().secret
+	accessKey, secretKey := getKeys()
 
 	// new qbox mac
 	mac := qbox.NewMac(accessKey, secretKey)

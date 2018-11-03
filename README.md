@@ -11,6 +11,10 @@
 > govendor add +local
 > govendor add +external
 
+## TODO
+
+- git push之前写一个shell脚本，保证vendor依赖添加完整，push完成之后删除vendor
+
 
 ## 参考
 - [qiniu-sdk源代码](https://github.com/qiniu/api.v7/blob/master/storage/form_upload.go)

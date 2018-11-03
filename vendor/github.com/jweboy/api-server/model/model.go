@@ -8,3 +8,8 @@ type BaseModel struct {
 	UpdatedAt time.Time  `gorm:"column:updatedAt" json:"-"`
 	DeletedAt *time.Time `gorm:"column:deletedAt" sql:"index" json:"-"`
 }
+
+type FileBaseModel struct {
+	Id        uint64    `gorm:"primary_key;AUTO_INCREMENT;column:id" json:"-"`
+	CreatedAt time.Time `gorm:"column:createdAt" json:"-"`
+}
