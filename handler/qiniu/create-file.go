@@ -9,7 +9,9 @@ import (
 	"github.com/gin-gonic/gin"
 	. "github.com/jweboy/api-server/handler"
 	"github.com/jweboy/api-server/pkg/errno"
+	"github.com/qiniu/api.v7/auth/qbox"
 	"github.com/qiniu/api.v7/storage"
+	log "qiniupkg.com/x/log.v7"
 )
 
 // UploadFile 文件上传
@@ -21,7 +23,7 @@ import (
 // @Param   bucketName     path    string     true        "存储空间名称"
 // @Router /qiniu/file/{bucketName} [post]
 func UploadFile(c *gin.Context) {
-	// TODO: 文件代销需要作限制
+	// TODO: 文件大小需要作限制
 
 	// 检查对应的存储空间名是否上传
 	bucketName := c.Param("bucketName")
@@ -92,4 +94,52 @@ func UploadFile(c *gin.Context) {
 	// 返回成功结果
 	SendResponse(c, nil, putRet)
 
+}
+
+// ListFile 获取指定空间的文件列表
+func ListFile(c *gin.Context) {
+	bucketName := c.Query("bucketName")
+	size := c.Query("size")
+	page := c.Query("page")
+	if bucketName == "" || size == "" || page == "" {
+		SendResponse(c, errno.ErrBind, nil)
+		return
+	}
+
+	// TODO: 直接从数据库获取可以进行分页操作，不从七牛云获取
+}
+
+// DeleteQuery 删除文件Query请求参数
+type DeleteQuery struct {
+	Bucket string `form:"bucket"`
+	ID     string `form:"id"`
+}
+
+// DeleteFile 删除指定空间的文件
+func DeleteFile(c *gin.Context) {
+	var query DeleteQuery
+	if c.ShouldBindQuery(&query) == nil {
+		// 判断bucket、id不为空
+		if query.ID == "" || query.Bucket == "" {
+			log.Println(query)
+			SendResponse(c, errno.ErrBind, nil)
+			return
+		}
+
+		// 删除指定文件
+		accessKey, secretKey := getKeys()
+
+		mac := qbox.NewMac(accessKey, secretKey)
+
+		cfg := storage.Config{}
+
+		bucketManager := storage.NewBucketManager(mac, &cfg)
+
+		if err := bucketManager.Delete(query.Bucket, query.ID); err != nil {
+			fmt.Printf(err.Error())
+			SendResponse(c, errno.ErrFileDelete, nil)
+			return
+		}
+		SendResponse(c, nil, query.ID)
+	}
 }
