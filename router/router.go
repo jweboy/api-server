@@ -63,7 +63,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	q := g.Group("/v1/qiniu")
 	{
 		q.POST("/file/:bucket", qiniu.UploadFile)
-		q.DELETE("/file", qiniu.DeleteFile)
+		q.DELETE("/file/:id", qiniu.DeleteFile)
 		q.GET("/file", qiniu.ListFile)
 		q.GET("/bucket", qiniu.ListBucket)
 	}

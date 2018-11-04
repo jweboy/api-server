@@ -17,3 +17,10 @@ func (f *FileModel) Create() error {
 func (f *FileModel) Find() error {
 	return DB.Self.Find(&f).Error
 }
+
+func DeleteFile(id uint64) error {
+	file := FileModel{}
+	file.FileBaseModel.Id = id
+
+	return DB.Self.Delete(&file).Error
+}
