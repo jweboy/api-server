@@ -4,15 +4,14 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"net/url"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	. "github.com/jweboy/api-server/handler"
 	"github.com/jweboy/api-server/model"
 	"github.com/jweboy/api-server/pkg/errno"
-	"github.com/qiniu/api.v7/auth/qbox"
 	"github.com/qiniu/api.v7/storage"
-	log "qiniupkg.com/x/log.v7"
 )
 
 // UploadFile 文件上传
@@ -93,7 +92,7 @@ func UploadFile(c *gin.Context) {
 
 	// 存入数据库的数据模型
 	f := model.FileModel{
-		Name: putRet.Key,
+		Name: url.QueryEscape(putRet.Key),
 		Key:  putRet.Hash,
 	}
 
@@ -124,39 +123,4 @@ func ListFile(c *gin.Context) {
 	}
 
 	// TODO: 直接从数据库获取可以进行分页操作，不从七牛云获取
-}
-
-// DeleteQuery 删除文件Query请求参数
-type DeleteQuery struct {
-	Bucket string `form:"bucket"`
-	ID     string `form:"id"`
-}
-
-// DeleteFile 删除指定空间的文件
-func DeleteFile(c *gin.Context) {
-	var query DeleteQuery
-	if c.ShouldBindQuery(&query) == nil {
-		// 判断bucket、id不为空
-		if query.ID == "" || query.Bucket == "" {
-			log.Println(query)
-			SendResponse(c, errno.ErrBind, nil)
-			return
-		}
-
-		// 删除指定文件
-		accessKey, secretKey := getKeys()
-
-		mac := qbox.NewMac(accessKey, secretKey)
-
-		cfg := storage.Config{}
-
-		bucketManager := storage.NewBucketManager(mac, &cfg)
-
-		if err := bucketManager.Delete(query.Bucket, query.ID); err != nil {
-			fmt.Printf(err.Error())
-			SendResponse(c, errno.ErrFileDelete, nil)
-			return
-		}
-		SendResponse(c, nil, query.ID)
-	}
 }
