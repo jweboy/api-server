@@ -37,5 +37,6 @@ create table if not exists `tb_files`(
 	`id` bigint(20) unsigned not null primary key auto_increment,
     `name` varchar(255) not null,
     `key` varchar(255) not null,
+    `bucket` varchar(255) not null,
     `createdAt` timestamp null default null
 )

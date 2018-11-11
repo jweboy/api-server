@@ -36,7 +36,7 @@ var (
 
 // @license.name MIT
 
-// @host localhost:4000
+// @host 118.24.155.105:4000
 // @BasePath /v1
 func main() {
 	pflag.Parse()
