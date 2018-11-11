@@ -21,7 +21,7 @@ definitions:
       username:
         type: string
     type: object
-host: localhost:4000
+host: 118.24.155.105:4000
 info:
   contact: {}
   description: This is restful api server with golang.

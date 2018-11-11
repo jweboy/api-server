@@ -10,7 +10,7 @@
         },
         "version": "{{.Version}}"
     },
-    "host": "localhost:4000",
+    "host": "118.24.155.105:4000",
     "basePath": "/v1",
     "paths": {
         "/qiniu/bucket": {
