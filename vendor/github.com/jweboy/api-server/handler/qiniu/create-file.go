@@ -92,8 +92,9 @@ func UploadFile(c *gin.Context) {
 
 	// 存入数据库的数据模型
 	f := model.FileModel{
-		Name: url.QueryEscape(putRet.Key),
-		Key:  putRet.Hash,
+		Name:   url.QueryEscape(putRet.Key),
+		Key:    putRet.Hash,
+		Bucket: bucket,
 	}
 
 	// TODO: 数据库重复存入的问题
@@ -110,17 +111,4 @@ func UploadFile(c *gin.Context) {
 
 	// 返回成功结果
 	SendResponse(c, nil, nil)
-}
-
-// ListFile 获取指定空间的文件列表
-func ListFile(c *gin.Context) {
-	bucketName := c.Query("bucketName")
-	size := c.Query("size")
-	page := c.Query("page")
-	if bucketName == "" || size == "" || page == "" {
-		SendResponse(c, errno.ErrBind, nil)
-		return
-	}
-
-	// TODO: 直接从数据库获取可以进行分页操作，不从七牛云获取
 }
