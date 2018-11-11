@@ -21,7 +21,7 @@ definitions:
       username:
         type: string
     type: object
-host: localhost:4000
+host: 118.24.155.105:4000
 info:
   contact: {}
   description: This is restful api server with golang.
@@ -45,6 +45,38 @@ paths:
             $ref: '#/definitions/handler.Response'
             type: object
       summary: 获取存储空间列表
+      tags:
+      - qiniu
+  /qiniu/file:
+    get:
+      consumes:
+      - application/json
+      description: 获取指定存储空间的文件列表，带分页。
+      parameters:
+      - description: 镜像空间名
+        in: query
+        name: bucket
+        required: true
+        type: string
+      - description: 页码
+        in: query
+        name: page
+        required: true
+        type: integer
+      - description: 页数
+        in: query
+        name: size
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":0,"message":"ok", "data": []}'
+          schema:
+            $ref: '#/definitions/handler.Response'
+            type: object
+      summary: 获取指定空间的文件列表
       tags:
       - qiniu
   /qiniu/file/{bucketName}:

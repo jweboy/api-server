@@ -21,6 +21,16 @@ type Pagination struct {
 }
 
 // ListFile 获取指定空间的文件列表
+// @Summary 获取指定空间的文件列表
+// @Description 获取指定存储空间的文件列表，带分页。
+// @Tags qiniu
+// @Accept  json
+// @Produce  json
+// @Param   bucket     query    string     true        "镜像空间名"
+// @Param   page     query    int     true        "页码"
+// @Param   size     query    int     true        "页数"
+// @Router /qiniu/file [get]
+// @Success 200 {object} handler.Response "{"code":0,"message":"ok", "data": []}"
 func ListFile(c *gin.Context) {
 	var pagination Pagination
 
