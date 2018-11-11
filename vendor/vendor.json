@@ -197,92 +197,92 @@
 		{
 			"checksumSHA1": "1kK6aw4inAt49ilKCYEMo4Zs8l8=",
 			"path": "github.com/jweboy/api-server",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "h8SIs2Au7Iq5zBJXt+s+x0d/fWw=",
 			"path": "github.com/jweboy/api-server/config",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
-			"checksumSHA1": "Sr9sOwyYpMIQwIe/0CRb2rR8st4=",
+			"checksumSHA1": "eEUQL9FJY0aMCJobOZN4HqSuvDQ=",
 			"path": "github.com/jweboy/api-server/docs",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "KdbqwsB2wgyRaiFcU3BANGRQffk=",
 			"path": "github.com/jweboy/api-server/handler",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
-			"checksumSHA1": "w/5sA0VkY2fi1EiPMOvehLxPe1I=",
+			"checksumSHA1": "EHmTN72ZPJvhorv4QaUZGtpfAG0=",
 			"path": "github.com/jweboy/api-server/handler/qiniu",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "9Z8VSr0s8sGUQZze5kp1FR/E3EQ=",
 			"path": "github.com/jweboy/api-server/handler/sd",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "N2k/QOVsWDm2TF2QKTRphG2JjV8=",
 			"path": "github.com/jweboy/api-server/handler/user",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "SAqyZ4VEZ3PhEfLegiv/4JdTJDo=",
 			"path": "github.com/jweboy/api-server/model",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "PbmM0G0zZYbeYx55wKOCiHaRScM=",
 			"path": "github.com/jweboy/api-server/pkg/auth",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "BG+tTUCKMGzlZy5nkk/+19YOvu0=",
 			"path": "github.com/jweboy/api-server/pkg/constvar",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "clpkKxwntZqK8+QG36Y/0gI2Bok=",
 			"path": "github.com/jweboy/api-server/pkg/errno",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "AweXEQuWJoAvgCGRf0MM6bZENd4=",
 			"path": "github.com/jweboy/api-server/pkg/version",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "XoUnaG0Z9B/3VPvUSwGjVuS6aI4=",
 			"path": "github.com/jweboy/api-server/router",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "MO+PjzWSFC6pJuYAeCkgcKs7L+A=",
 			"path": "github.com/jweboy/api-server/router/middleware",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "X34VJaqImgYj6wxXP5ybXtPkTRg=",
 			"path": "github.com/jweboy/api-server/util",
-			"revision": "be04d2f503895b14e6318559aa70acb3950a6490",
-			"revisionTime": "2018-11-04T15:11:59Z"
+			"revision": "46ca50e29a21cf25214ec4c0f8c1017858371a0f",
+			"revisionTime": "2018-11-11T12:19:55Z"
 		},
 		{
 			"checksumSHA1": "43k7wJHq6oW+9ziVxEgxTqgCS2g=",

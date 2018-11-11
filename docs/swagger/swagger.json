@@ -37,6 +37,53 @@
                 }
             }
         },
+        "/qiniu/file": {
+            "get": {
+                "description": "获取指定存储空间的文件列表，带分页。",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "qiniu"
+                ],
+                "summary": "获取指定空间的文件列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "镜像空间名",
+                        "name": "bucket",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "页码",
+                        "name": "page",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "页数",
+                        "name": "size",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":0,\"message\":\"ok\", \"data\": []}",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/handler.Response"
+                        }
+                    }
+                }
+            }
+        },
         "/qiniu/file/{bucketName}": {
             "post": {
                 "description": "支持任何格式的文件上传，文件大小有限定",
