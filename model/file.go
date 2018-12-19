@@ -7,8 +7,8 @@ import (
 )
 
 type FileModel struct {
-	Id        uint64    `gorm:"primary_key;AUTO_INCREMENT;column:id" json:"-"`
-	CreatedAt time.Time `gorm:"column:createdAt" json:"-"`
+	Id        uint64    `json:"id" gorm:"primary_key;AUTO_INCREMENT;column:id"`
+	CreatedAt time.Time `json:"createTime" gorm:"column:createdAt"`
 	Name      string    `json:"name" grom:"column: name;not null" binding:"required"`
 	Key       string    `json:"key" grom:"column: key;not null" binding:"required"`
 	Bucket    string    `json:"bucket" grom:"column: bucket;not null" binding:"required"`
