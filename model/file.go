@@ -1,14 +1,17 @@
 package model
 
 import (
-	"github.com/jweboy/api-server/pkg/constvar"
+	"time"
+
+	"github.com/jweboy/api-server/pkg/setting"
 )
 
 type FileModel struct {
-	FileBaseModel
-	Name   string `json:"name" grom:"column: name;not null" binding:"required"`
-	Key    string `json:"key" grom:"column: key;not null" binding:"required"`
-	Bucket string `json:"bucket" grom:"column: bucket;not null" binding:"required"`
+	Id        uint64    `gorm:"primary_key;AUTO_INCREMENT;column:id" json:"-"`
+	CreatedAt time.Time `gorm:"column:createdAt" json:"-"`
+	Name      string    `json:"name" grom:"column: name;not null" binding:"required"`
+	Key       string    `json:"key" grom:"column: key;not null" binding:"required"`
+	Bucket    string    `json:"bucket" grom:"column: bucket;not null" binding:"required"`
 }
 
 func (f *FileModel) TableName() string {
@@ -25,7 +28,7 @@ func (f *FileModel) Find() error {
 
 func DeleteFile(id uint64) error {
 	file := FileModel{}
-	file.FileBaseModel.Id = id
+	file.Id = id
 
 	return DB.Self.Delete(&file).Error
 }
@@ -34,7 +37,7 @@ func DeleteFile(id uint64) error {
 func ListFile(bucket string, offset, limit int) ([]*FileModel, uint64, error) {
 	// TODO: 这里可能需要根据前面判断调整做调整
 	if limit == 0 {
-		limit = constvar.DefaultLimit
+		limit = setting.AppSetting.PageSize
 	}
 
 	files := make([]*FileModel, 0)
