@@ -53,6 +53,7 @@ func Load() *gin.Engine {
 		q.GET("/file", qiniu.ListFile)
 		q.POST("/file/:bucket", qiniu.UploadFile)
 		q.DELETE("/file/:id", qiniu.DeleteFile)
+		q.GET("/file/detail", qiniu.FileDetail)
 		q.GET("/bucket", qiniu.ListBucket)
 	}
 
