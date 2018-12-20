@@ -21,7 +21,7 @@ branches:
   only:
   # - deploy
   # - master
-    - improve-code
+  # - improve-code
 addons:
   ssh_known_hosts:
   - 118.24.155.105

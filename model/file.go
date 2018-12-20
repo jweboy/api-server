@@ -56,3 +56,10 @@ func ListFile(bucket string, offset, limit int) ([]*FileModel, uint64, error) {
 	// 返回分页数据和列表总数量
 	return files, count, nil
 }
+
+// FileDetail 获取文件详情
+func FileDetail(id int) (*FileModel, error) {
+	file := &FileModel{}
+	result := DB.Self.Where("id=?", id).First(&file)
+	return file, result.Error
+}
