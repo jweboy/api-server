@@ -22,7 +22,7 @@
  - [Getting started](#getting-started)
  - [Go web frameworks](#supported-web-frameworks)
  - [Supported Web Frameworks](#supported-web-frameworks)
- - [How to use it with `gin`?](#how-to-use-it-with-`gin`?)
+ - [How to use it with Gin](#how-to-use-it-with-gin)
  - [Implementation Status](#implementation-status)
  - [swag cli](#swag-cli)
  - [General API Info](#general-api-info)
@@ -70,9 +70,10 @@ $ swag init
 
 - [gin](http://github.com/swaggo/gin-swagger)
 - [echo](http://github.com/swaggo/echo-swagger)
+- [buffalo](https://github.com/swaggo/buffalo-swagger)
 - [net/http](https://github.com/swaggo/http-swagger)
 
-## How to use it with `gin`?
+## How to use it with Gin
 
 Find the example source code [here](https://github.com/swaggo/swag/tree/master/example/celler).
 
@@ -176,14 +177,14 @@ import (
 func main() {
 
 	// programatically set swagger info
-	docs.Title = "Swagger Example API"
-	docs.Description = "This is a sample server Petstore server."
+	docs.SwaggerInfo.Title = "Swagger Example API"
+	docs.SwaggerInfo.Description = "This is a sample server Petstore server."
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Host = "petstore.swagger.io"
 	docs.SwaggerInfo.BasePath = "/v2"
 
 	r := gin.New()
-    
+
 	// use ginSwagger middleware to serve the API docs
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
@@ -304,22 +305,26 @@ OPTIONS:
 
 # General API Info
 
-**Example**  
+**Example**
 [celler/main.go](https://github.com/swaggo/swag/blob/master/example/celler/main.go)
 
-| annotation         | description                                                                                     | example                                                         |
-|--------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
-| title              | **Required.** The title of the application.                                                     | // @title Swagger Example API                                   |
-| version            | **Required.** Provides the version of the application API.                                      | // @version 1.0                                                 |
-| description        | A short description of the application.                                                         | // @description This is a sample server celler server.          |
-| termsOfService     | The Terms of Service for the API.                                                               | // @termsOfService http://swagger.io/terms/                     |
-| contact.name       | The contact information for the exposed API.                                                    | // @contact.name API Support                                    |
-| contact.url        | The URL pointing to the contact information. MUST be in the format of a URL.                    | // @contact.url http://www.swagger.io/support                   |
-| contact.email      | The email address of the contact person/organization. MUST be in the format of an email address.| // @contact.email support@swagger.io                            |
-| license.name       | **Required.** The license name used for the API.                                                | // @license.name Apache 2.0                                     |
-| license.url        | A URL to the license used for the API. MUST be in the format of a URL.                          | // @license.url http://www.apache.org/licenses/LICENSE-2.0.html |
-| host               | The host (name or ip) serving the API.                                                          | // @host localhost:8080                                         |
-| BasePath           | The base path on which the API is served.                                                       | // @BasePath /api/v1                                            |
+| annotation         	| description                                                                                     | example                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
+| title              	| **Required.** The title of the application.                                                     | // @title Swagger Example API                                   |
+| version            	| **Required.** Provides the version of the application API.                                      | // @version 1.0                                                 |
+| description        	| A short description of the application.                                                         | // @description This is a sample server celler server.          |
+| tag.name      	 	| Name of a tag.                                                        						  | // @tag.name This is the name of the tag                        |
+| tag.description      	| Description of the tag                                                         				  | // @tag.description Cool Description                            |
+| tag.docs.url      	| Url of the external Documentation of the tag                                                    | // @tag.docs.url https://example.com                            |
+| tag.docs.descripiton  | Description of the external Documentation of the tag                                            | // @tag.docs.descirption Best example documentation             |
+| termsOfService 	    | The Terms of Service for the API.                                                               | // @termsOfService http://swagger.io/terms/                     |
+| contact.name      	| The contact information for the exposed API.                                                    | // @contact.name API Support                                    |
+| contact.url        	| The URL pointing to the contact information. MUST be in the format of a URL.                    | // @contact.url http://www.swagger.io/support                   |
+| contact.email      	| The email address of the contact person/organization. MUST be in the format of an email address.| // @contact.email support@swagger.io                            |
+| license.name       	| **Required.** The license name used for the API.                                                | // @license.name Apache 2.0                                     |
+| license.url        	| A URL to the license used for the API. MUST be in the format of a URL.                          | // @license.url http://www.apache.org/licenses/LICENSE-2.0.html |
+| host               	| The host (name or ip) serving the API.                                                          | // @host localhost:8080                                         |
+| BasePath           	| The base path on which the API is served.                                                       | // @BasePath /api/v1                                            |
 
 ## Security
 
@@ -343,7 +348,7 @@ OPTIONS:
 
 # API Operation
 
-**Example**  
+**Example**
 [celler/controller](https://github.com/swaggo/swag/tree/master/example/celler/controller)
 
 
@@ -432,6 +437,16 @@ Make it AND condition
 // @Param default query string false "string default" default(A)
 ```
 
+It also works for the struct fields:
+
+```go
+type Foo struct {
+    Bar string `minLength:"4" maxLength:"16"`
+    Baz int `minimum:"10" maximum:"20" default:"15"`
+    Qux []string `enums:"foo,bar,baz"`
+}
+```
+
 ### Available
 
 Field Name | Type | Description
@@ -498,6 +513,18 @@ type Account struct {
 type Account struct {
     // ID this is userid
     ID   int    `json:"id"
+}
+```
+
+### Override swagger type of a struct field
+
+```go
+type Account struct {
+    // Override primitive type by simply specifying it via `swaggertype` tag
+    ID     sql.NullInt64 `json:"id" swaggertype:"integer"`
+
+    // Array types can be overridden using "array,<prim_type>" format
+    Coeffs []big.Float `json:"coeffs" swaggertype:"array,number"`
 }
 ```
 

@@ -8,6 +8,7 @@ import (
 	"io"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/qiniu/api.v7/conf"
 	"github.com/qiniu/x/bytes.v7"
@@ -16,8 +17,8 @@ import (
 
 // ResumeUploader 表示一个分片上传的对象
 type ResumeUploader struct {
-	client *Client
-	cfg    *Config
+	Client *Client
+	Cfg    *Config
 }
 
 // NewResumeUploader 表示构建一个新的分片上传的对象
@@ -27,8 +28,8 @@ func NewResumeUploader(cfg *Config) *ResumeUploader {
 	}
 
 	return &ResumeUploader{
-		cfg:    cfg,
-		client: &DefaultClient,
+		Cfg:    cfg,
+		Client: &DefaultClient,
 	}
 }
 
@@ -43,8 +44,8 @@ func NewResumeUploaderEx(cfg *Config, client *Client) *ResumeUploader {
 	}
 
 	return &ResumeUploader{
-		client: client,
-		cfg:    cfg,
+		Client: client,
+		Cfg:    cfg,
 	}
 }
 
@@ -57,7 +58,7 @@ func (p *ResumeUploader) Mkblk(
 	headers.Add("Content-Type", conf.CONTENT_TYPE_OCTET)
 	headers.Add("Authorization", "UpToken "+upToken)
 
-	return p.client.CallWith(ctx, ret, "POST", reqUrl, headers, body, size)
+	return p.Client.CallWith(ctx, ret, "POST", reqUrl, headers, body, size)
 }
 
 // 发送bput请求
@@ -69,7 +70,7 @@ func (p *ResumeUploader) Bput(
 	headers.Add("Content-Type", conf.CONTENT_TYPE_OCTET)
 	headers.Add("Authorization", "UpToken "+upToken)
 
-	return p.client.CallWith(ctx, ret, "POST", reqUrl, headers, body, size)
+	return p.Client.CallWith(ctx, ret, "POST", reqUrl, headers, body, size)
 }
 
 // 分片上传请求
@@ -159,7 +160,9 @@ func (p *ResumeUploader) Mkfile(
 		url += "/key/" + encode(key)
 	}
 	for k, v := range extra.Params {
-		url += fmt.Sprintf("/%s/%s", k, encode(v))
+		if (strings.HasPrefix(k, "x:") || strings.HasPrefix(k, "x-qn-meta-")) && v != "" {
+			url += fmt.Sprintf("/%s/%s", k, encode(v))
+		}
 	}
 
 	buf := make([]byte, 0, 196*len(extra.Progresses))
@@ -175,7 +178,7 @@ func (p *ResumeUploader) Mkfile(
 	headers.Add("Content-Type", conf.CONTENT_TYPE_OCTET)
 	headers.Add("Authorization", "UpToken "+upToken)
 
-	return p.client.CallWith(
+	return p.Client.CallWith(
 		ctx, ret, "POST", url, headers, bytes.NewReader(buf), len(buf))
 }
 
