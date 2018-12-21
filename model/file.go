@@ -26,6 +26,10 @@ func (f *FileModel) Find() error {
 	return DB.Self.Find(&f).Error
 }
 
+func (f *FileModel) Update() error {
+	return DB.Self.Model(&f).Where("id = ?", f.Id).Updates(f).Error
+}
+
 func DeleteFile(id uint64) error {
 	file := FileModel{}
 	file.Id = id
