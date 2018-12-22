@@ -9,6 +9,7 @@ var (
 	ErrValidation = &Errno{Code: 20001, Message: "Validation failed."}
 	ErrDatabase   = &Errno{Code: 20002, Message: "Database error."}
 	ErrToken      = &Errno{Code: 20003, Message: "Error occurred while signing the JSON web token."}
+	ErrQiniuCloud = &Errno{Code: 20004, Message: "Qiniu cloud error."}
 
 	// User Errors
 	ErrEncrypt           = &Errno{Code: 20101, Message: "Error occurred while encrypting the user password."}

@@ -18,8 +18,12 @@ import (
 func Load() *gin.Engine {
 	route := gin.New()
 
+	// 注入logger
+	route.Use(gin.Logger())
+
 	// 处理请求可能因为程序bug或者其他异常情况导致程序挂了
 	// 调用gin.Recovery()恢复 API 服务器从而不影响下一次请求的调用
+	// 如果程序出现panic错误，会将请求定义为500错误返回
 	route.Use(gin.Recovery())
 
 	// 强制浏览器不使用缓存
@@ -51,9 +55,11 @@ func Load() *gin.Engine {
 	q := route.Group("/v1/qiniu")
 	{
 		q.GET("/file", qiniu.ListFile)
-		q.POST("/file/:bucket", qiniu.UploadFile)
-		q.DELETE("/file/:id", qiniu.DeleteFile)
+		q.POST("/file", qiniu.UploadFile)
+		q.DELETE("/file", qiniu.DeleteFile)
 		q.GET("/file/detail", qiniu.FileDetail)
+		q.PUT("/file/edit", qiniu.EditDetail)
+		q.PUT("/file/changeMime", qiniu.ChangeMime)
 		q.GET("/bucket", qiniu.ListBucket)
 	}
 

@@ -1,4 +1,4 @@
-package qiniu
+package util
 
 import (
 	"github.com/jweboy/api-server/pkg/setting"
@@ -15,7 +15,8 @@ func getMac() *qbox.Mac {
 	return mac
 }
 
-func getToken(bucket string) string {
+func GetToken(bucket string) string {
+	// TODO: 七牛云有一个getToken的方法可以替换
 	// get mac
 	mac := getMac()
 
@@ -51,4 +52,11 @@ func GetBucketManager() *storage.BucketManager {
 
 	bucketManger := storage.NewBucketManager(mac, &cfg)
 	return bucketManger
+}
+
+func GetFormUploader() *storage.FormUploader {
+	cfg := getCfg()
+
+	formUploader := storage.NewFormUploader(&cfg)
+	return formUploader
 }

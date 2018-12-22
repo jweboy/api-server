@@ -1,23 +1,25 @@
 package qiniu
 
 import (
+	"github.com/jweboy/api-server/util"
+
 	"github.com/gin-gonic/gin"
 	. "github.com/jweboy/api-server/api"
 	"github.com/jweboy/api-server/model"
 	"github.com/jweboy/api-server/pkg/errno"
 )
 
-// ListResponse 重新组织的请求返回json
+// ListResponse 请求返回的json结构
 type ListResponse struct {
 	Total uint64             `json:"total"`
 	Data  []*model.FileModel `json:"data"`
 }
 
-// Pagination 请求体Query的类型等定义
+// Pagination 分页请求体
 type Pagination struct {
-	Bucket string `form:"bucket" binding:"required"`
-	Page   int    `form:"page" binding:"required"`
-	Size   int    `form:"size" binding:"required"`
+	Bucket string `form:"bucket" binding:"required"` // 必填项
+	Page   int    `form:"page"`
+	Size   int    `form:"size"`
 }
 
 // ListFile 获取指定空间的文件列表
@@ -34,16 +36,24 @@ type Pagination struct {
 func ListFile(c *gin.Context) {
 	var pagination Pagination
 
-	// 检查Query完整
-	if c.BindQuery(&pagination) != nil {
-		// TODO: 边界值处理 page size 都为0的时候 会有warning => Wanted to override status code 400 with 200
+	// 默认第 1 页， 10 条 / 页
+	page := c.DefaultQuery("page", "1")
+	size := c.DefaultQuery("size", "10")
+
+	// 检查 query 中的 bucket 字段是否存在
+	if c.ShouldBindQuery(&pagination) != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
-	// TODO: 这里如果需要在查找返回的数据中增加新字段的需求，需要增加锁处理，具体参考 https://github.com/lexkong/apiserver_demos/blob/master/demo07/service/service.go
+	// TODO: 这里如果需要在查找返回的数据中增加新字段的需求，需要增加锁处理
+	// 具体参考 https://github.com/lexkong/apiserver_demos/blob/master/demo07/service/service.go
 	// sql查询具体分页数据
-	files, count, err := model.ListFile(pagination.Bucket, pagination.Page, pagination.Size)
+	files, count, err := model.ListFile(
+		pagination.Bucket,
+		util.StrToInt(page),
+		util.StrToInt(size),
+	)
 	if err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return

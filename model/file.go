@@ -12,6 +12,8 @@ type FileModel struct {
 	Name      string    `json:"name" grom:"column: name;not null" binding:"required"`
 	Key       string    `json:"key" grom:"column: key;not null" binding:"required"`
 	Bucket    string    `json:"bucket" grom:"column: bucket;not null" binding:"required"`
+	Size      int       `json:"size" grom:"column: size;not null" binding:"required"`
+	Type      string    `json:"type" grom:"column: type;not null" binding:"required"`
 }
 
 func (f *FileModel) TableName() string {
@@ -24,6 +26,10 @@ func (f *FileModel) Create() error {
 
 func (f *FileModel) Find() error {
 	return DB.Self.Find(&f).Error
+}
+
+func (f *FileModel) Update() error {
+	return DB.Self.Model(&f).Where("id = ?", f.Id).Updates(f).Error
 }
 
 func DeleteFile(id uint64) error {
