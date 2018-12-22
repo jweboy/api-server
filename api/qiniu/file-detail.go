@@ -5,6 +5,7 @@ import (
 	. "github.com/jweboy/api-server/api"
 	"github.com/jweboy/api-server/model"
 	"github.com/jweboy/api-server/pkg/errno"
+	"github.com/jweboy/api-server/util"
 )
 
 // DetailQuery 文件详情请求体
@@ -16,18 +17,25 @@ type DetailQuery struct {
 func FileDetail(c *gin.Context) {
 	var query DetailQuery
 
-	// 检查query
+	// 检查 query 中的 ID 字段是否存在
 	if c.ShouldBindQuery(&query) != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
-	detail, err := model.FileDetail(query.ID)
+	// 查询文件详情
+	d, err := model.FileDetail(query.ID)
 	if err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}
 
-	// TODO: 需要对返回的数据中的Name字段做转义
-	SendResponse(c, nil, detail)
+	SendResponse(c, nil, model.FileModel{
+		Id:        d.Id,
+		CreatedAt: d.CreatedAt,
+		Name:      util.DecodeStr(d.Name), // 反序列化文件名
+		Key:       d.Key,
+		Bucket:    d.Bucket,
+		Size:      d.Size,
+	})
 }

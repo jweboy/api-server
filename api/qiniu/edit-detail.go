@@ -16,7 +16,7 @@ import (
 )
 
 type EditModel struct {
-	fileName string `form:"name" binding:"required"`
+	FileName string `form:"name" binding:"required"`
 	ID       int    `form:"id" binding:"required"`
 }
 
