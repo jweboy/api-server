@@ -55,7 +55,7 @@ func Load() *gin.Engine {
 	q := route.Group("/v1/qiniu")
 	{
 		q.GET("/file", qiniu.ListFile)
-		q.POST("/file/:bucket", qiniu.UploadFile)
+		q.POST("/file", qiniu.UploadFile)
 		q.DELETE("/file/:id", qiniu.DeleteFile)
 		q.GET("/file/detail", qiniu.FileDetail)
 		q.PUT("/file/edit", qiniu.EditDetail)

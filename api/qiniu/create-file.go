@@ -11,8 +11,24 @@ import (
 	. "github.com/jweboy/api-server/api"
 	"github.com/jweboy/api-server/model"
 	"github.com/jweboy/api-server/pkg/errno"
+	"github.com/jweboy/api-server/util"
 	"github.com/qiniu/api.v7/storage"
 )
+
+// CreateQuery 文件上传请求 query
+type CreateQuery struct {
+	Bucket string `form:"bucket" binding:"required"` // 必须绑定对应的 bucket
+}
+
+// PutRet 七牛云返回成功后的数据结构
+type PutRet struct {
+	Key      string
+	Hash     string
+	Fsize    int
+	Bucket   string
+	Name     string
+	MimeType string
+}
 
 // UploadFile 文件上传
 // @Summary 文件上传
@@ -24,22 +40,28 @@ import (
 // @Router /qiniu/file/{bucketName} [post]
 func UploadFile(c *gin.Context) {
 	// TODO: 文件大小需要作限制
-	// TODO: 请求参数校验整理
-	// TODO: 文件上传改为字节或者数据 https://gist.github.com/ZenGround0/49e4a1aa126736f966a1dfdcb84abdae
+	var createQuery CreateQuery
 
-	bucket := c.Param("bucket")
-	if bucket == "" {
+	// 检查 bucket 字段是否上传且不为空
+	if c.ShouldBindQuery(&createQuery) != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
 	// 获取表单提交的文件
 	file, err := c.FormFile("file")
+
+	// 检查 file 文件是否上传
 	if err != nil {
-		fmt.Print(err.Error())
-		SendResponse(c, errno.ErrFileUpload, nil)
+		// fmt.Print(err.Error())
+		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
+
+	/* ============= 在 ./files 目录下生成新文件 ============= */
+	// TODO: 文件上传改为字节或者数据 https://gist.github.com/ZenGround0/49e4a1aa126736f966a1dfdcb84abdae
+	var fileName = file.Filename
+	var bucket = createQuery.Bucket
 
 	// 读取文件的具体内容
 	srcFile, err := file.Open()
@@ -48,10 +70,6 @@ func UploadFile(c *gin.Context) {
 		return
 	}
 
-	// 文件名
-	var fileName = file.Filename
-
-	// 在files目录下生成新文件
 	outFile, err := os.Create("files/" + fileName)
 	if err != nil {
 		SendResponse(c, errno.ErrFileUpload, nil)
@@ -62,11 +80,8 @@ func UploadFile(c *gin.Context) {
 	// 拷贝源文件内容到新文件
 	io.Copy(outFile, srcFile)
 
-	// 设置基础配置
-	cfg := getCfg()
-
-	// 用于存储上传成功后的返回数据
-	putRet := storage.PutRet{}
+	/* ============= 上传到七牛云存储库 ============= */
+	// TODO: 由于目前对于文件流操作不熟悉，暂时采用上传到服务器之后再传一份到七牛云服务器，后期优化为数据流上传的方式。
 
 	// 文件上传需要增加的一些额外选项
 	putExtra := storage.PutExtra{
@@ -75,37 +90,36 @@ func UploadFile(c *gin.Context) {
 		},
 	}
 
+	// 用于存储上传成功后的返回数据
+	putRet := PutRet{}
+
 	// 获取上传的token
-	// TODO: 七牛云有一个getToken的方法可以替换
-	upToken := getToken(bucket)
+	uploadToken := util.GetToken(bucket)
 
 	// 构建表单上传的对象
-	formUploader := storage.NewFormUploader(&cfg)
+	formUploader := util.GetFormUploader()
 
-	// 上传文件到七牛云
-	// FIXME: 由于目前对于文件流操作不熟悉，暂时采用上传到服务器之后再传一份到七牛云服务器，后期优化为数据流上传的方式。
-	errs := formUploader.PutFile(context.Background(), &putRet, upToken, fileName, "files/"+fileName, &putExtra)
-	if errs != nil {
-		fmt.Println("errs:", errs.Error())
+	repErr := formUploader.PutFile(context.Background(), &putRet, uploadToken, fileName, "files/"+fileName, &putExtra)
+	if repErr != nil {
+		fmt.Println("repErr:", repErr.Error())
 		SendResponse(c, errno.ErrFileUpload, nil)
 		return
 	}
 
-	// 存入数据库的数据模型
+	/* ============= 数据入库 ============= */
+	// 定义入库数据模型
 	f := model.FileModel{
 		Name:   url.QueryEscape(putRet.Key),
 		Key:    putRet.Hash,
 		Bucket: bucket,
+		Size:   putRet.Fsize,
+		// TODO: 这个 fileType待定
+		Type: putRet.MimeType,
 	}
 
-	// TODO: 数据库重复存入的问题
-	// if err := f.Find(); err != nil {
-	// 	fmt.Printf("Database find error => %v", err)
-	// }
-
 	// 存入数据库
-	if errs := f.Create(); errs != nil {
-		fmt.Printf("Database create error => %v", errs)
+	if err := f.Create(); err != nil {
+		fmt.Printf("Database create error => %v", err)
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}

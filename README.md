@@ -17,6 +17,7 @@
 - git push之前写一个shell脚本，保证vendor依赖添加完整，push完成之后删除vendor
 - 每个请求发生错误的时候，增加logger部分保存到log文件，方便做日志查询
 - 制定错误码以及七牛云对应的错误码
+- 数据表tb_files和mimeTye字段
 
 ## 参考
 - [qiniu-sdk源代码](https://github.com/qiniu/api.v7/blob/master/storage/form_upload.go)
