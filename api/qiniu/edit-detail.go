@@ -2,86 +2,65 @@ package qiniu
 
 import (
 	"fmt"
-	"log"
-	"strconv"
 
 	. "github.com/jweboy/api-server/api"
 	"github.com/jweboy/api-server/model"
 	"github.com/jweboy/api-server/pkg/errno"
-	"github.com/jweboy/api-server/pkg/setting"
-	"github.com/qiniu/api.v7/auth/qbox"
-	"github.com/qiniu/api.v7/storage"
+	"github.com/jweboy/api-server/util"
 
 	"github.com/gin-gonic/gin"
 )
 
+// EditModel 编辑文件请求 body
 type EditModel struct {
 	FileName string `form:"name" binding:"required"`
 	ID       int    `form:"id" binding:"required"`
 }
 
+// EditDetail 更新文件信息
 func EditDetail(c *gin.Context) {
-	// var editModel EditModel
+	var m EditModel
 
-	log.Println(2, c.PostForm("fileName"))
-	// TODO: 校验需要抽取公共函数
-	// if err := c.ShouldBindJSON(&editModel); err != nil {
-	// 	log.Println("====== Bind By JSON ======")
-	// 	log.Println(1, editModel.fileName)
-	// }
+	if err := c.ShouldBind(&m); err != nil {
+		SendResponse(c, errno.ErrBind, nil)
+		return
+	}
 
-	// FIXME: 目前的编辑模式指定目标空间和源空间相同
-	// FIXME: 不支持跨机房空间
-	id, _ := strconv.Atoi(c.PostForm("id"))
-
-	destFileName := c.PostForm("name")
-
-	// 从数据库获取对应的文件名称
-	detail, err := model.FileDetail(id)
+	/* ============= 从数据库获取文件信息 ============= */
+	var id = m.ID
+	d, err := model.FileDetail(id)
 	if err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}
 
-	idUint64, _ := strconv.ParseUint(c.PostForm("id"), 10, 64)
+	/* ============= 更新七牛云存储的文件信息 ============= */
+	// FIXME: 目前的编辑模式指定目标空间和源空间相同，并且不支持跨机房空间
+	var srcBucket = d.Bucket
+	var srcKey = d.Name
+	var destBucket = srcBucket
+	var destKey = m.FileName
 
-	// step1. 更新七牛云存储的文件信息
-	srcBucket := detail.Bucket
-	destBucket := srcBucket
-	destKey := c.PostForm("name")
-	srcKey := detail.Name
-
-	// TODO:
-	// 这里可以提取为公共函数
-	mac := qbox.NewMac(
-		setting.QiniuSetting.AccessKey,
-		setting.QiniuSetting.SecretKey,
-	)
-	cfg := storage.Config{}
-	bucketManager := storage.NewBucketManager(mac, &cfg)
-
-	fmt.Println(srcBucket, destBucket, destKey, srcKey)
-	fmt.Println(detail.Bucket)
+	bucketManager := util.GetBucketManager()
 
 	putErr := bucketManager.Move(srcBucket, srcKey, destBucket, destKey, false)
 	if putErr != nil {
 		fmt.Println(putErr)
-		SendResponse(c, errno.ErrListBucketError, nil)
+		SendResponse(c, errno.ErrQiniuCloud, nil)
 		return
 	}
 
-	// step2. 更新数据库文件细信息
-	file := model.FileModel{
-		Name: destFileName,
-		Id:   idUint64,
+	/* ============= 更新数据库中的文件信息 ============= */
+	f := model.FileModel{
+		Name: destKey,
+		Id:   uint64(id),
 	}
 
-	if err := file.Update(); err != nil {
+	if err := f.Update(); err != nil {
 		SendResponse(c, errno.ErrDatabase, nil)
 		return
 	}
 
-	// step3. 返回请求体
-	SendResponse(c, nil, detail)
+	SendResponse(c, nil, nil)
 
 }
