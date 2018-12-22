@@ -6,26 +6,23 @@ import (
 	"github.com/qiniu/api.v7/storage"
 )
 
-var (
-	accessKey = setting.QiniuSetting.AccessKey
-	secretKey = setting.QiniuSetting.SecretKey
-	AccessKey = setting.QiniuSetting.AccessKey
-	// secretKey = setting.QiniuSetting.SecretKey
-)
-
-func getKeys() (string, string) {
-	return accessKey, secretKey
-}
-
-func getToken(bucket string) string {
+func getMac() *qbox.Mac {
 	// get mac
 	mac := qbox.NewMac(
 		setting.QiniuSetting.AccessKey,
 		setting.QiniuSetting.SecretKey,
 	)
+	return mac
+}
+
+func getToken(bucket string) string {
+	// get mac
+	mac := getMac()
+
 	// get policy
 	putPolicy := storage.PutPolicy{
-		Scope: bucket,
+		Scope:      bucket,
+		ReturnBody: `{"key":"$(key)","hash":"$(etag)","fsize":$(fsize),"bucket":"$(bucket)","name":"$(x:name)"}`,
 	}
 	// 2小时有效期
 	putPolicy.Expires = 7200
@@ -46,4 +43,12 @@ func getCfg() storage.Config {
 	cfg.UseCdnDomains = false
 
 	return cfg
+}
+
+func GetBucketManager() *storage.BucketManager {
+	mac := getMac()
+	cfg := getCfg()
+
+	bucketManger := storage.NewBucketManager(mac, &cfg)
+	return bucketManger
 }
