@@ -42,8 +42,10 @@ func EditDetail(c *gin.Context) {
 	var destKey = m.FileName
 
 	bucketManager := util.GetBucketManager()
+	// 如果目标文件存在，强制覆盖文件。如果为false不覆盖，默认返回614 file exists
+	force := true
 
-	putErr := bucketManager.Move(srcBucket, srcKey, destBucket, destKey, false)
+	putErr := bucketManager.Move(srcBucket, srcKey, destBucket, destKey, force)
 	if putErr != nil {
 		fmt.Println(putErr)
 		SendResponse(c, errno.ErrQiniuCloud, nil)
