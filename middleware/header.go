@@ -17,15 +17,14 @@ func NoCache(c *gin.Context) {
 
 // Options 对于OPTIONS请求和中止,然后退出中间件链并结束请求。
 func Options(c *gin.Context) {
-	// fmt.Printf(c.Request.Method)
 	if c.Request.Method != "OPTIONS" {
 		c.Next()
 	} else {
 		c.Header("Access-Control-Allow-Origin", "*")
 		c.Header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS")
-		c.Header("Access-Control-Allow-Header", "authorization, origin, content-type, accept")
+		c.Header("Access-Control-Allow-Headers", "authorization, origin, content-type, accept")
 		c.Header("Allow", "HEAD,GET,POST,PUT,PATCH,DELETE,OPTIONS")
-		c.Header("Content-Type", "application/json; charet")
+		c.Header("Content-Type", "application/json; charet=utf-8")
 		c.AbortWithStatus(200)
 	}
 }
