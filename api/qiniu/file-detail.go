@@ -14,6 +14,15 @@ type DetailQuery struct {
 }
 
 // FileDetail 获取文件详情
+// @Summary 获取文件详情
+// @Description 获取文件详情
+// @Tags qiniu
+// @Accept  json
+// @Produce  json
+// @Param id	query	int	 true	"文件id"
+// @Router /qiniu/file/detail  [get]
+// TODO: nil需要定义
+// @Success 200 {object} nil
 func FileDetail(c *gin.Context) {
 	var query DetailQuery
 

@@ -28,11 +28,11 @@ type Pagination struct {
 // @Tags qiniu
 // @Accept  json
 // @Produce  json
-// @Param   bucket     query    string     true        "镜像空间名"
-// @Param   page     query    int     true        "页码"
-// @Param   size     query    int     true        "页数"
+// @Param   bucket   query    string   true  "镜像空间名"
+// @Param   page     query    int     false  "页码" default(1)
+// @Param   size     query    int     false  "页数" default(10)
 // @Router /qiniu/file [get]
-// @Success 200 {object} handler.Response "{"code":0,"message":"ok", "data": []}"
+// @Success 200 {array} model.FileModel
 func ListFile(c *gin.Context) {
 	var pagination Pagination
 

@@ -6,6 +6,11 @@ import (
 	"github.com/jweboy/api-server/pkg/setting"
 )
 
+type UpdateDetailModel struct {
+	FileName string `json:"name" example:"xx.png"`
+	ID       int    `json:"id" example:"1"`
+}
+
 type FileModel struct {
 	Id        uint64    `json:"id" gorm:"primary_key;AUTO_INCREMENT;column:id"`
 	CreatedAt time.Time `json:"createTime" gorm:"column:createdAt"`
