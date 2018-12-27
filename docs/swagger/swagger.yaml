@@ -1,34 +1,43 @@
-basePath: /v1
+basePath: /api/v1
 definitions:
-  handler.Response:
+  model.FileModel:
     properties:
-      code:
+      bucket:
+        type: string
+      createTime:
+        type: string
+      id:
         type: integer
-      data:
-        type: object
-      message:
+      key:
         type: string
+      name:
+        type: string
+      size:
+        type: integer
+      type:
+        type: string
+    required:
+    - bucket
+    - key
+    - name
+    - size
+    - type
     type: object
-  user.CreateRequest:
+  model.UpdateDetailModel:
     properties:
-      password:
-        type: string
-      username:
-        type: string
-    type: object
-  user.CreateResponse:
-    properties:
-      username:
+      id:
+        example: 1
+        type: integer
+      name:
+        example: xx.png
         type: string
     type: object
-host: 118.24.155.105:4000
+host: localhost:4000
 info:
   contact: {}
-  description: This is restful api server with golang.
-  license:
-    name: MIT
-  termsOfService: https://github.com/jweboy/restfult-api-server
-  title: Restful API
+  description: '{{.Description}}'
+  license: {}
+  title: '{{.Title}}'
   version: '{{.Version}}'
 paths:
   /qiniu/bucket:
@@ -38,16 +47,31 @@ paths:
       description: 获取所有的存储空间列表，无分页。
       produces:
       - application/json
-      responses:
-        "200":
-          description: '{"code":0,"message":"ok", "data": []}'
-          schema:
-            $ref: '#/definitions/handler.Response'
-            type: object
       summary: 获取存储空间列表
       tags:
       - qiniu
   /qiniu/file:
+    delete:
+      consumes:
+      - application/json
+      description: 删除指定空间的文件
+      parameters:
+      - description: 文件id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/null'
+            type: object
+      summary: 删除指定空间的文件
+      tags:
+      - qiniu
     get:
       consumes:
       - application/json
@@ -58,65 +82,125 @@ paths:
         name: bucket
         required: true
         type: string
-      - description: 页码
+      - default: 1
+        description: 页码
         in: query
         name: page
-        required: true
         type: integer
-      - description: 页数
+      - default: 10
+        description: 页数
         in: query
         name: size
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.FileModel'
+            type: array
+      summary: 获取指定空间的文件列表
+      tags:
+      - qiniu
+    post:
+      consumes:
+      - multipart/form-data
+      description: 支持任何格式的文件上传，文件大小有限定
+      parameters:
+      - description: 存储空间名称
+        in: query
+        name: bucket
+        required: true
+        type: string
+      - description: 选择文件
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/null'
+            type: object
+      summary: 文件上传
+      tags:
+      - qiniu
+  /qiniu/file/changeMime:
+    put:
+      consumes:
+      - application/json
+      description: 更新文件类型
+      parameters:
+      - description: 文件类型
+        in: query
+        name: type
+        required: true
+        type: string
+      - description: 文件id
+        in: query
+        name: id
         required: true
         type: integer
       produces:
       - application/json
       responses:
         "200":
-          description: '{"code":0,"message":"ok", "data": []}'
+          description: OK
           schema:
-            $ref: '#/definitions/handler.Response'
+            $ref: '#/definitions/null'
             type: object
-      summary: 获取指定空间的文件列表
+      summary: 更新文件类型
       tags:
       - qiniu
-  /qiniu/file/{bucketName}:
-    post:
+  /qiniu/file/detail:
+    get:
       consumes:
       - application/json
-      description: 支持任何格式的文件上传，文件大小有限定
+      description: 获取文件详情
       parameters:
-      - description: 存储空间名称
-        in: path
-        name: bucketName
+      - description: 文件id
+        in: query
+        name: id
         required: true
-        type: string
+        type: integer
       produces:
       - application/json
-      summary: 文件上传
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/nil'
+            type: object
+      summary: 获取文件详情
       tags:
       - qiniu
-  /user/{username}:
-    post:
+  /qiniu/file/edit:
+    put:
       consumes:
-      - application/json
-      description: 新增用户入库
+      - multipart/form-data
+      description: 更新文件信息
       parameters:
-      - description: 用户名1-32个字符,密码4-128个字符，都必填
+      - description: 请求体
         in: body
-        name: user
+        name: data
         required: true
         schema:
-          $ref: '#/definitions/user.CreateRequest'
+          $ref: '#/definitions/model.UpdateDetailModel'
           type: object
       produces:
       - application/json
       responses:
         "200":
-          description: '{"code":0,"message":"ok","data":{"username":"Jack"}}'
+          description: OK
           schema:
-            $ref: '#/definitions/user.CreateResponse'
+            $ref: '#/definitions/null'
             type: object
-      summary: 创建用户
+      summary: 更新文件信息
       tags:
-      - user
+      - qiniu
 swagger: "2.0"
