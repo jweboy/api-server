@@ -15,6 +15,15 @@ type DeleteQuery struct {
 }
 
 // DeleteFile 删除指定空间的文件
+// @Summary 删除指定空间的文件
+// @Description 删除指定空间的文件
+// @Tags qiniu
+// @Accept  json
+// @Produce  json
+// @Param id	query	int	 true	"文件id"
+// @Router /qiniu/file  [delete]
+// TODO: nil需要定义
+// @Success 200 {object} null
 func DeleteFile(c *gin.Context) {
 	var deleteQuery DeleteQuery
 

@@ -44,7 +44,7 @@ func Load() *gin.Engine {
 	route.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// The health check handlers
-	svcd := route.Group("/v1/sd")
+	svcd := route.Group("/api/v1/sd")
 	{
 		svcd.GET("/health", sd.HealthCheck)
 		svcd.GET("/disk", sd.DiskCheck)
@@ -52,7 +52,7 @@ func Load() *gin.Engine {
 		svcd.GET("/ram", sd.RAMCheck)
 	}
 
-	q := route.Group("/v1/qiniu")
+	q := route.Group("/api/v1/qiniu")
 	{
 		q.GET("/file", qiniu.ListFile)
 		q.POST("/file", qiniu.UploadFile)

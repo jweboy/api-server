@@ -1,17 +1,14 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is restful api server with golang.",
-        "title": "Restful API",
-        "termsOfService": "https://github.com/jweboy/restfult-api-server",
+        "description": "{{.Description}}",
+        "title": "{{.Title}}",
         "contact": {},
-        "license": {
-            "name": "MIT"
-        },
+        "license": {},
         "version": "{{.Version}}"
     },
-    "host": "118.24.155.105:4000",
-    "basePath": "/v1",
+    "host": "localhost:4000",
+    "basePath": "/api/v1",
     "paths": {
         "/qiniu/bucket": {
             "get": {
@@ -25,16 +22,7 @@
                 "tags": [
                     "qiniu"
                 ],
-                "summary": "获取存储空间列表",
-                "responses": {
-                    "200": {
-                        "description": "{\"code\":0,\"message\":\"ok\", \"data\": []}",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/handler.Response"
-                        }
-                    }
-                }
+                "summary": "获取存储空间列表"
             }
         },
         "/qiniu/file": {
@@ -60,35 +48,35 @@
                     },
                     {
                         "type": "integer",
+                        "default": 1,
                         "description": "页码",
                         "name": "page",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     },
                     {
                         "type": "integer",
+                        "default": 10,
                         "description": "页数",
                         "name": "size",
-                        "in": "query",
-                        "required": true
+                        "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\":0,\"message\":\"ok\", \"data\": []}",
+                        "description": "OK",
                         "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/handler.Response"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.FileModel"
+                            }
                         }
                     }
                 }
-            }
-        },
-        "/qiniu/file/{bucketName}": {
+            },
             "post": {
                 "description": "支持任何格式的文件上传，文件大小有限定",
                 "consumes": [
-                    "application/json"
+                    "multipart/form-data"
                 ],
                 "produces": [
                     "application/json"
@@ -101,16 +89,30 @@
                     {
                         "type": "string",
                         "description": "存储空间名称",
-                        "name": "bucketName",
-                        "in": "path",
+                        "name": "bucket",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "选择文件",
+                        "name": "file",
+                        "in": "formData",
                         "required": true
                     }
-                ]
-            }
-        },
-        "/user/{username}": {
-            "post": {
-                "description": "新增用户入库",
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/null"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "删除指定空间的文件",
                 "consumes": [
                     "application/json"
                 ],
@@ -118,27 +120,133 @@
                     "application/json"
                 ],
                 "tags": [
-                    "user"
+                    "qiniu"
                 ],
-                "summary": "创建用户",
+                "summary": "删除指定空间的文件",
                 "parameters": [
                     {
-                        "description": "用户名1-32个字符,密码4-128个字符，都必填",
-                        "name": "user",
+                        "type": "integer",
+                        "description": "文件id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/null"
+                        }
+                    }
+                }
+            }
+        },
+        "/qiniu/file/changeMime": {
+            "put": {
+                "description": "更新文件类型",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "qiniu"
+                ],
+                "summary": "更新文件类型",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "文件类型",
+                        "name": "type",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "文件id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/null"
+                        }
+                    }
+                }
+            }
+        },
+        "/qiniu/file/detail": {
+            "get": {
+                "description": "获取文件详情",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "qiniu"
+                ],
+                "summary": "获取文件详情",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "文件id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/nil"
+                        }
+                    }
+                }
+            }
+        },
+        "/qiniu/file/edit": {
+            "put": {
+                "description": "更新文件信息",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "qiniu"
+                ],
+                "summary": "更新文件信息",
+                "parameters": [
+                    {
+                        "description": "请求体",
+                        "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/user.CreateRequest"
+                            "$ref": "#/definitions/model.UpdateDetailModel"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{\"code\":0,\"message\":\"ok\",\"data\":{\"username\":\"Jack\"}}",
+                        "description": "OK",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/user.CreateResponse"
+                            "$ref": "#/definitions/null"
                         }
                     }
                 }
@@ -146,36 +254,49 @@
         }
     },
     "definitions": {
-        "handler.Response": {
+        "model.FileModel": {
             "type": "object",
+            "required": [
+                "bucket",
+                "key",
+                "name",
+                "size",
+                "type"
+            ],
             "properties": {
-                "code": {
+                "bucket": {
+                    "type": "string"
+                },
+                "createTime": {
+                    "type": "string"
+                },
+                "id": {
                     "type": "integer"
                 },
-                "data": {
-                    "type": "object"
+                "key": {
+                    "type": "string"
                 },
-                "message": {
+                "name": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "type": {
                     "type": "string"
                 }
             }
         },
-        "user.CreateRequest": {
+        "model.UpdateDetailModel": {
             "type": "object",
             "properties": {
-                "password": {
-                    "type": "string"
+                "id": {
+                    "type": "integer",
+                    "example": 1
                 },
-                "username": {
-                    "type": "string"
-                }
-            }
-        },
-        "user.CreateResponse": {
-            "type": "object",
-            "properties": {
-                "username": {
-                    "type": "string"
+                "name": {
+                    "type": "string",
+                    "example": "xx.png"
                 }
             }
         }

@@ -13,8 +13,8 @@ import (
 // @Tags qiniu
 // @Accept  json
 // @Produce  json
+// TODO: 数组需要定义
 // @Router /qiniu/bucket [get]
-// @Success 200 {object} handler.Response "{"code":0,"message":"ok", "data": []}"
 func ListBucket(c *gin.Context) {
 	bucketManger := util.GetBucketManager()
 
