@@ -21,12 +21,12 @@ type EditModel struct {
 // @Summary 更新文件信息
 // @Description 更新文件信息
 // @Tags qiniu
-// @Accept  multipart/form-data
+// @Accept  application/x-www-form-urlencoded
 // @Produce  json
 // @Param data	body	model.UpdateDetailModel	 true	"请求体"
 // @Router /qiniu/file/edit  [put]
 // TODO: nil需要定义 put请求的formdata部分
-// @Success 200 {object} null
+// @Success 200
 func EditDetail(c *gin.Context) {
 	var m EditModel
 

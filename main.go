@@ -11,7 +11,8 @@ import (
 	"github.com/jweboy/api-server/router"
 )
 
-// @host http://118.24.155.105:4000
+// 118.24.155.105
+// @host 118.24.155.105:4000
 // @BasePath /api/v1
 
 func main() {

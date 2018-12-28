@@ -22,8 +22,7 @@ type DeleteQuery struct {
 // @Produce  json
 // @Param id	query	int	 true	"文件id"
 // @Router /qiniu/file  [delete]
-// TODO: nil需要定义
-// @Success 200 {object} null
+// @Success 200
 func DeleteFile(c *gin.Context) {
 	var deleteQuery DeleteQuery
 

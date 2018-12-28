@@ -7,7 +7,7 @@
         "license": {},
         "version": "{{.Version}}"
     },
-    "host": "localhost:4000",
+    "host": "118.24.155.105:4000",
     "basePath": "/api/v1",
     "paths": {
         "/qiniu/bucket": {
@@ -22,7 +22,10 @@
                 "tags": [
                     "qiniu"
                 ],
-                "summary": "获取存储空间列表"
+                "summary": "获取存储空间列表",
+                "responses": {
+                    "200": {}
+                }
             }
         },
         "/qiniu/file": {
@@ -74,7 +77,7 @@
                 }
             },
             "post": {
-                "description": "支持任何格式的文件上传，文件大小有限定",
+                "description": "支持任何格式的文件上传",
                 "consumes": [
                     "multipart/form-data"
                 ],
@@ -102,13 +105,7 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/null"
-                        }
-                    }
+                    "200": {}
                 }
             },
             "delete": {
@@ -133,13 +130,7 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/null"
-                        }
-                    }
+                    "200": {}
                 }
             }
         },
@@ -173,13 +164,7 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/null"
-                        }
-                    }
+                    "200": {}
                 }
             }
         },
@@ -210,7 +195,7 @@
                         "description": "OK",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/nil"
+                            "$ref": "#/definitions/model.FileModel"
                         }
                     }
                 }
@@ -220,7 +205,7 @@
             "put": {
                 "description": "更新文件信息",
                 "consumes": [
-                    "multipart/form-data"
+                    "application/x-www-form-urlencoded"
                 ],
                 "produces": [
                     "application/json"
@@ -242,13 +227,7 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/null"
-                        }
-                    }
+                    "200": {}
                 }
             }
         }
