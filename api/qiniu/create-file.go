@@ -33,14 +33,14 @@ type PutRet struct {
 // TODO: nil
 // UploadFile 文件上传
 // @Summary 文件上传
-// @Description 支持任何格式的文件上传，文件大小有限定
+// @Description 支持任何格式的文件上传
 // @Tags qiniu
 // @Accept  multipart/form-data
 // @Produce  json
 // @Param   bucket   query    string     true        "存储空间名称"
 // @Param	file	formData	file	true	"选择文件"
 // @Router /qiniu/file [post]
-// @Success 200 {object} null
+// @Success 200
 func UploadFile(c *gin.Context) {
 	// TODO: 文件大小需要作限制
 	var createQuery CreateQuery

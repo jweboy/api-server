@@ -64,11 +64,25 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/null'
-            type: object
+        "200": {}
+      summary: 获取存储空间列表
+      tags:
+      - qiniu
+  /qiniu/file:
+    delete:
+      consumes:
+      - application/json
+      description: 删除指定空间的文件
+      parameters:
+      - description: 文件id
+        in: query
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200": {}
       summary: 删除指定空间的文件
       tags:
       - qiniu
@@ -107,7 +121,7 @@ paths:
     post:
       consumes:
       - multipart/form-data
-      description: 支持任何格式的文件上传，文件大小有限定
+      description: 支持任何格式的文件上传
       parameters:
       - description: 存储空间名称
         in: query
@@ -122,11 +136,7 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/null'
-            type: object
+        "200": {}
       summary: 文件上传
       tags:
       - qiniu
@@ -149,11 +159,7 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/null'
-            type: object
+        "200": {}
       summary: 更新文件类型
       tags:
       - qiniu
@@ -174,7 +180,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/nil'
+            $ref: '#/definitions/model.FileModel'
             type: object
       summary: 获取文件详情
       tags:
@@ -182,7 +188,7 @@ paths:
   /qiniu/file/edit:
     put:
       consumes:
-      - multipart/form-data
+      - application/x-www-form-urlencoded
       description: 更新文件信息
       parameters:
       - description: 请求体
@@ -195,11 +201,7 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/null'
-            type: object
+        "200": {}
       summary: 更新文件信息
       tags:
       - qiniu

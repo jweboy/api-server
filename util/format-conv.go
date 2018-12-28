@@ -14,10 +14,11 @@ func StrToInt(str string) int {
 	return i
 }
 
-func DecodeStr(str string) string {
+func DecodeStr(str string) (string, error) {
 	s, err := url.QueryUnescape(str)
 	if err != nil {
 		fmt.Println("String decode error", err)
+		return "", err
 	}
-	return s
+	return s, nil
 }

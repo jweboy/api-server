@@ -1,6 +1,7 @@
 package qiniu
 
 import (
+	"github.com/jweboy/api-server/service"
 	"github.com/jweboy/api-server/util"
 
 	"github.com/gin-gonic/gin"
@@ -49,7 +50,7 @@ func ListFile(c *gin.Context) {
 	// TODO: 这里如果需要在查找返回的数据中增加新字段的需求，需要增加锁处理
 	// 具体参考 https://github.com/lexkong/apiserver_demos/blob/master/demo07/service/service.go
 	// sql查询具体分页数据
-	files, count, err := model.ListFile(
+	files, count, err := service.ListFile(
 		pagination.Bucket,
 		util.StrToInt(page),
 		util.StrToInt(size),

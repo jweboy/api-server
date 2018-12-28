@@ -21,8 +21,7 @@ type DetailQuery struct {
 // @Produce  json
 // @Param id	query	int	 true	"文件id"
 // @Router /qiniu/file/detail  [get]
-// TODO: nil需要定义
-// @Success 200 {object} nil
+// @Success 200 {object} model.FileModel
 func FileDetail(c *gin.Context) {
 	var query DetailQuery
 
@@ -39,10 +38,17 @@ func FileDetail(c *gin.Context) {
 		return
 	}
 
+	// 反序列化文件名
+	n, err := util.DecodeStr(d.Name)
+	if err != nil {
+		SendResponse(c, errno.ErrDatabase, nil)
+		return
+	}
+
 	SendResponse(c, nil, model.FileModel{
 		Id:        d.Id,
 		CreatedAt: d.CreatedAt,
-		Name:      util.DecodeStr(d.Name), // 反序列化文件名
+		Name:      n,
 		Key:       d.Key,
 		Bucket:    d.Bucket,
 		Size:      d.Size,

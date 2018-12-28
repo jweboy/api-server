@@ -24,8 +24,7 @@ type EditTypeModel struct {
 // @Param type	query	string	 true	"文件类型"
 // @Param id	query	int	 true	"文件id"
 // @Router /qiniu/file/changeMime  [put]
-// TODO: nil需要定义
-// @Success 200 {object} null
+// @Success 200
 func ChangeMime(c *gin.Context) {
 	var m EditTypeModel
 

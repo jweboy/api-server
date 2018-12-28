@@ -1,6 +1,7 @@
 package model
 
 import (
+	"sync"
 	"time"
 
 	"github.com/jweboy/api-server/pkg/setting"
@@ -19,6 +20,11 @@ type FileModel struct {
 	Bucket    string    `json:"bucket" grom:"column: bucket;not null" binding:"required"`
 	Size      int       `json:"size" grom:"column: size;not null" binding:"required"`
 	Type      string    `json:"type" grom:"column: type;not null" binding:"required"`
+}
+
+type FileList struct {
+	Lock  *sync.Mutex
+	IdMap map[uint64]*FileModel
 }
 
 func (f *FileModel) TableName() string {
