@@ -87,7 +87,7 @@
                 "tags": [
                     "qiniu"
                 ],
-                "summary": "更新文件类型",
+                "summary": "文件上传",
                 "parameters": [
                     {
                         "type": "string",
@@ -102,22 +102,6 @@
                         "name": "file",
                         "in": "formData",
                         "required": true
-                    },
-                    {
-                        "type": "integer",
-                        "description": "文件id",
-                        "name": "id",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "object",
-                            "$ref": "#/definitions/null"
-                        }
                     }
                 ],
                 "responses": {
