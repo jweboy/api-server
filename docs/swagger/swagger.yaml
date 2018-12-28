@@ -32,7 +32,7 @@ definitions:
         example: xx.png
         type: string
     type: object
-host: localhost:4000
+host: 118.24.155.105:4000
 info:
   contact: {}
   description: '{{.Description}}'
@@ -45,22 +45,6 @@ paths:
       consumes:
       - application/json
       description: 获取所有的存储空间列表，无分页。
-      produces:
-      - application/json
-      summary: 获取存储空间列表
-      tags:
-      - qiniu
-  /qiniu/file:
-    delete:
-      consumes:
-      - application/json
-      description: 删除指定空间的文件
-      parameters:
-      - description: 文件id
-        in: query
-        name: id
-        required: true
-        type: integer
       produces:
       - application/json
       responses:
