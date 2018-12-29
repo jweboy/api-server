@@ -35,8 +35,10 @@ drop table `tb_files`;
 
 create table if not exists `tb_files`(
 	`id` bigint(20) unsigned not null primary key auto_increment,
+    `createdAt` timestamp null default null
     `name` varchar(255) not null,
     `key` varchar(255) not null,
     `bucket` varchar(255) not null,
-    `createdAt` timestamp null default null
+    `size` int,
+    `mimeType` varchar(255) not null,
 )

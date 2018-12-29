@@ -55,7 +55,7 @@ func ListFile(bucket string, page, size int) ([]*model.FileModel, uint64, error)
 				Key:       f.Key,
 				Bucket:    f.Bucket,
 				Size:      f.Size,
-				Type:      f.Type,
+				MimeType:  f.MimeType,
 			}
 		}(f)
 	}
