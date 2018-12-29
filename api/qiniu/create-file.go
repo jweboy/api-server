@@ -30,7 +30,6 @@ type PutRet struct {
 	MimeType string
 }
 
-// TODO: nil
 // UploadFile 文件上传
 // @Summary 文件上传
 // @Description 支持任何格式的文件上传
@@ -65,6 +64,7 @@ func UploadFile(c *gin.Context) {
 	// TODO: 文件上传改为字节或者数据 https://gist.github.com/ZenGround0/49e4a1aa126736f966a1dfdcb84abdae
 	var fileName = file.Filename
 	var bucket = createQuery.Bucket
+	var mimeType = file.Header["Content-Type"][0]
 
 	// 读取文件的具体内容
 	srcFile, err := file.Open()
@@ -87,11 +87,7 @@ func UploadFile(c *gin.Context) {
 	// TODO: 由于目前对于文件流操作不熟悉，暂时采用上传到服务器之后再传一份到七牛云服务器，后期优化为数据流上传的方式。
 
 	// 文件上传需要增加的一些额外选项
-	putExtra := storage.PutExtra{
-		Params: map[string]string{
-			"x:name": fileName,
-		},
-	}
+	putExtra := storage.PutExtra{}
 
 	// 用于存储上传成功后的返回数据
 	putRet := PutRet{}
@@ -112,12 +108,11 @@ func UploadFile(c *gin.Context) {
 	/* ============= 数据入库 ============= */
 	// 定义入库数据模型
 	f := model.FileModel{
-		Name:   url.QueryEscape(putRet.Key),
-		Key:    putRet.Hash,
-		Bucket: bucket,
-		Size:   putRet.Fsize,
-		// TODO: 这个 fileType待定
-		Type: putRet.MimeType,
+		Name:     url.QueryEscape(putRet.Key),
+		Key:      putRet.Hash,
+		Bucket:   bucket,
+		Size:     putRet.Fsize,
+		MimeType: mimeType,
 	}
 
 	// 存入数据库
